@@ -79,7 +79,7 @@ export default function Hero() {
           src="/hero-img.JPG"
           alt="Hero Background"
           fill
-          className="object-cover object-center opacity-75"
+          className="object-cover object-center opacity-20"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/50 via-purple-800/50 to-indigo-900/50 mix-blend-multiply" />
@@ -173,12 +173,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h1
-              className="text-5xl text-[fff] md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-indigo-200 text-transparent bg-clip-text"
+              className="text-5xl text-white/90 md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r bg-clip-text"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-                Nous sommes le lien qui brise votre isolement
+              Nous sommes le lien qui brise votre isolement
             </motion.h1>
 
             <motion.p
@@ -204,7 +204,7 @@ export default function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                    S'abonner
+                  S'abonner
                 </motion.button>
               </Link>
               <Link href="/contact">
@@ -213,7 +213,7 @@ export default function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                    Nous Contacter
+                  Nous Contacter
                 </motion.button>
               </Link>
             </motion.div>
@@ -248,23 +248,6 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {/* JAAC Logo */}
-            <motion.div
-              className="absolute inset-0 flex items-center justify-end z-10"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <Image
-                src="/jaac-logo.png"
-                alt="JAAC Logo"
-                width={700}
-                height={700}
-                className="w-auto h-auto max-w-full brightness-100 contrast-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
-                priority
-              />
-            </motion.div>
-
             <motion.div
               className="relative w-full aspect-square max-w-2xl mx-auto"
               animate={floatingAnimation}
@@ -349,22 +332,24 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-      
+
       {/* Enhanced Scroll Indicator */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
           style={{ opacity: useTransform(scrollYProgress, [0, 0.2], [1, 0]) }}
         >
-      <motion.div 
+          <motion.div
             className="flex flex-col items-center"
-        animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="text-white/70 text-sm mb-2 text-center">Scroll to explore</div>
+            <div className="text-white/70 text-sm mb-2 text-center">
+              Scroll to explore
+            </div>
             <div className="relative">
               <motion.div
                 className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500/30 to-indigo-500/30 backdrop-blur-sm border border-white/20 flex items-center justify-center"
@@ -419,10 +404,10 @@ export default function Hero() {
                   y: useTransform(scrollYProgress, [0, 0.5], [0, 10]),
                 }}
               />
-        </div>
-      </motion.div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
   );
-} 
+}

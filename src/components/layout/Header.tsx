@@ -12,7 +12,7 @@ const navItems = [
   { name: 'À propos', href: '/about' },
   { name: 'Services', href: '/services' },
   { name: 'Contact', href: '/contact' },
-  { name: 'S\'abonner', href: '/subscribe', isSpecial: true },
+  { name: 'S\'abonner', href: '#pricing', isSpecial: true, isScroll: true },
 ];
 
 const MotionLink = motion(Link);
@@ -32,6 +32,16 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const element = document.getElementById(href.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <motion.header 
       initial={{ y: -100, opacity: 0 }}
@@ -39,11 +49,11 @@ export default function Header() {
       transition={{ duration: 0.3, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-100 ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-xl shadow-lg py-3 border-b border-purple-100' 
-          : 'bg-transparent py-5'
+          ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-purple-100' 
+          : 'bg-transparent py-2'
       }`}
     >
-      <div className="container mx-auto px-6">
+      <div className="container py-2 mx-auto px-6">
         <div className="flex justify-between items-center">
           <Logo isScrolled={pathname === '/about' ? true : isScrolled} />
 
@@ -70,6 +80,7 @@ export default function Header() {
                   onHoverEnd={() => setHoveredItem(null)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={(e) => item.isScroll ? handleScrollToSection(e, item.href) : undefined}
                 >
                   <span className="relative z-10 text-sm font-medium tracking-wide">
                     {item.name}
@@ -159,7 +170,12 @@ export default function Header() {
                                 ? 'bg-white/20 text-white font-medium'
                                 : 'text-white/90 hover:bg-white/10'
                           }`}
-                          onClick={() => setIsMobileMenuOpen(false)}
+                          onClick={(e) => {
+                            if (item.isScroll) {
+                              handleScrollToSection(e, item.href);
+                            }
+                            setIsMobileMenuOpen(false);
+                          }}
                           whileHover={{ scale: 1.02, x: 6 }}
                           whileTap={{ scale: 0.98 }}
                         >
