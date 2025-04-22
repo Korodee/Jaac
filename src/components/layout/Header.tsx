@@ -120,7 +120,7 @@ export default function Header() {
               animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
               transition={{ duration: 0.2 }}
             >
-              {isMobileMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+              {isMobileMenuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
             </motion.div>
           </motion.button>
         </div>
