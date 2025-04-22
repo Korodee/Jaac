@@ -2,7 +2,6 @@
 
 import Services from '@/components/sections/Services';
 import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
 
 export default function ServicesPage() {
@@ -38,7 +37,6 @@ export default function ServicesPage() {
         {/* Services Section */}
         <Services />
       </main>
-      <Footer />
     </>
   );
 } 

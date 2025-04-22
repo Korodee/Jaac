@@ -2,7 +2,6 @@
 
 import Contact from '@/components/sections/Contact';
 import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaArrowRight } from 'react-icons/fa';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -182,7 +181,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 } 

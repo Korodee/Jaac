@@ -2,7 +2,6 @@
 
 import About from '@/components/sections/About';
 import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { FaUsers, FaHandshake, FaHospital, FaHome, FaHeart, FaStar, FaShieldAlt, FaLightbulb, FaQuoteLeft, FaCheck } from 'react-icons/fa';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -238,7 +237,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 } 
