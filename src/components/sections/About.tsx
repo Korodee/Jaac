@@ -43,7 +43,7 @@ export default function About() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative py-[3rem] md:py-[4rem] overflow-hidden">
       {/* Static Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-purple-50 via-white to-indigo-50" />
@@ -55,7 +55,7 @@ export default function About() {
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-overlay" />
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container pt-[3rem] mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}

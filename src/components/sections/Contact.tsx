@@ -83,7 +83,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-[3rem] md:py-[6rem] overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-purple-50 via-white to-indigo-50" />
       <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(139,92,246,0.05)_1px,transparent_1px),linear-gradient(-45deg,rgba(99,102,241,0.05)_1px,transparent_1px)] bg-[size:48px_48px]" />

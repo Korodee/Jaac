@@ -163,8 +163,8 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative container mx-auto px-4 pt-32 pb-20">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="relative container mx-auto px-4 min-h-screen flex items-center py-20">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 w-full">
           {/* Text Content */}
           <motion.div
             className="flex-1 text-center lg:text-left"
@@ -182,7 +182,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-xl text-gray-300 mb-8 max-w-2xl"
+              className="hidden lg:block text-xl text-gray-300 mb-8 max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -248,6 +248,23 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
+            {/* JAAC Logo */}
+            <motion.div
+              className="absolute inset-0 flex items-center justify-end z-10"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <Image
+                src="/jaac-logo.png"
+                alt="JAAC Logo"
+                width={700}
+                height={700}
+                className="w-auto h-auto max-w-full brightness-100 contrast-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                priority
+              />
+            </motion.div>
+
             <motion.div
               className="relative w-full aspect-square max-w-2xl mx-auto"
               animate={floatingAnimation}

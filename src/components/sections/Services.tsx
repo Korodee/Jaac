@@ -101,7 +101,7 @@ export default function Services() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative py-[3rem] md:py-[6rem] overflow-hidden">
       {/* Static Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-purple-50" />
@@ -115,7 +115,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1 }}
-          className="text-center mb-24 relative"
+          className="text-center mb-16 md:mb-20 relative"
         >
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
@@ -177,7 +177,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-24 relative"
+          className="mt-16 md:mt-20 relative"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-[2.5rem] transform -rotate-1" />
           <div className="absolute inset-0 bg-white/50 backdrop-blur-sm rounded-[2.5rem] transform rotate-1" />

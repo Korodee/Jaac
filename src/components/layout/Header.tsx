@@ -45,7 +45,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
-          <Logo />
+          <Logo isScrolled={pathname === '/about' ? true : isScrolled} />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
@@ -96,7 +96,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <motion.button 
             className={`md:hidden relative z-10 p-2 rounded-lg transition-colors ${
-              isScrolled 
+              pathname === '/about' || isScrolled 
                 ? 'text-gray-600 hover:bg-purple-50' 
                 : 'text-white hover:bg-white/10'
             }`}
@@ -122,15 +122,24 @@ export default function Header() {
               animate={{ opacity: 1, backdropFilter: 'blur(16px)' }}
               exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/60 z-40 flex items-center justify-center md:hidden"
+              className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center md:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             >
+              {/* Close button */}
+              <button 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="fixed top-6 right-6 p-3 rounded-full bg-purple-600 hover:bg-purple-700 text-white shadow-lg transform transition-transform duration-200 hover:scale-110 z-50"
+                aria-label="Close menu"
+              >
+                <HiX size={24} />
+              </button>
+
               <motion.nav 
                 initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="relative flex flex-col space-y-4 bg-white/10 backdrop-blur-xl p-6 rounded-2xl mx-4 w-full max-w-sm"
+                className="relative flex flex-col space-y-4 bg-gradient-to-b from-purple-900 to-indigo-900 p-6 rounded-2xl mx-4 w-full max-w-sm border border-white/10 shadow-2xl"
                 onClick={e => e.stopPropagation()}
               >
                 {navItems.map((item, index) => {
@@ -143,8 +152,8 @@ export default function Header() {
                         item.isSpecial
                           ? 'bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white font-medium shadow-lg'
                           : isActive
-                            ? 'bg-white/10 text-white font-medium'
-                            : 'text-white/90 hover:bg-white/5'
+                            ? 'bg-white/20 text-white font-medium'
+                            : 'text-white/90 hover:bg-white/10'
                       }`}
                       onClick={() => setIsMobileMenuOpen(false)}
                       whileHover={{ scale: 1.02, x: 6 }}
