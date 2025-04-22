@@ -7,52 +7,52 @@ import Button from '../ui/Button';
 
 const plans = [
   {
-    title: 'Individual Plan',
+    title: 'Plan Individuel',
     icon: <FaUserFriends className="text-4xl" />,
-    price: '$49',
-    period: 'per month',
+    price: '49$',
+    period: 'par mois',
     features: [
-      'Monthly psychological support sessions',
-      '24/7 phone support',
-      'Access to online resources',
-      'Crisis intervention when needed',
-      'Email support'
+      'Sessions de soutien psychologique mensuelles',
+      'Support téléphonique 24/7',
+      'Accès aux ressources en ligne',
+      'Intervention de crise au besoin',
+      'Support par email'
     ],
     popular: false,
     gradient: 'from-purple-500 to-indigo-500',
-    description: 'Perfect for individuals seeking regular psychological support and guidance.'
+    description: 'Parfait pour les individus recherchant un soutien et un accompagnement psychologique régulier.'
   },
   {
-    title: 'Helping Hand',
+    title: 'Coup de Main',
     icon: <FaHandHoldingHeart className="text-4xl" />,
-    price: '$29',
-    period: 'per session',
+    price: '29$',
+    period: 'par séance',
     features: [
-      '30-minute rapid intervention',
-      'Quick problem resolution',
-      'Brief, effective method',
-      'Available 24/7',
-      'Add to any subscription'
+      'Intervention rapide de 30 minutes',
+      'Résolution rapide des problèmes',
+      'Méthode brève et efficace',
+      'Disponible 24/7',
+      'Ajoutable à tout abonnement'
     ],
     popular: true,
     gradient: 'from-pink-500 to-purple-500',
-    description: 'Ideal for immediate support and quick problem resolution.'
+    description: 'Idéal pour un soutien immédiat et une résolution rapide des problèmes.'
   },
   {
-    title: 'Business Plan',
+    title: 'Plan Entreprise',
     icon: <FaBuilding className="text-4xl" />,
-    price: 'Custom',
-    period: 'contact for pricing',
+    price: 'Sur mesure',
+    period: 'contactez-nous pour les tarifs',
     features: [
-      'Employee assistance program',
-      'Professional counseling',
-      'Therapeutic follow-up',
-      'Psychosocial intervention',
-      'Telemedicine services'
+      'Programme d\'aide aux employés',
+      'Counseling professionnel',
+      'Suivi thérapeutique',
+      'Intervention psychosociale',
+      'Services de télémédecine'
     ],
     popular: false,
     gradient: 'from-indigo-500 to-blue-500',
-    description: 'Comprehensive support for businesses and their employees.'
+    description: 'Soutien complet pour les entreprises et leurs employés.'
   }
 ];
 
@@ -89,15 +89,15 @@ export default function Subscribe() {
             className="inline-block"
           >
             <span className="text-purple-600 font-medium text-sm uppercase tracking-widest mb-3 block bg-purple-50 px-4 py-1.5 rounded-full border border-purple-100 shadow-sm">
-              Our Plans
+              Nos Forfaits
             </span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-transparent bg-clip-text">
-            Monthly Subscriptions
+            Abonnements Mensuels
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Enhance your subscription by adding HELPING HAND to your à la carte services. A 30-minute intervention to help you gain clarity in your situation with our brief, quick, and effective method.
-            </p>
+            Améliorez votre abonnement en ajoutant COUP DE MAIN à vos services à la carte. Une intervention de 30 minutes pour vous aider à y voir plus clair dans votre situation avec notre méthode brève, rapide et efficace.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -117,7 +117,7 @@ export default function Subscribe() {
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-pink-500 to-purple-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg flex items-center">
                     <FaStar className="mr-2" />
-                    Popular
+                    Populaire
                   </div>
                 )}
                 
@@ -159,7 +159,7 @@ export default function Subscribe() {
                   onClick={() => handlePlanSelect(plan.title)}
                 >
                   <span className="relative z-10">
-                  {selectedPlan === plan.title ? 'Selected' : 'Select Plan'}
+                  {selectedPlan === plan.title ? 'Sélectionné' : 'Choisir le forfait'}
                   </span>
                   {selectedPlan === plan.title && (
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -204,35 +204,34 @@ export default function Subscribe() {
               
               {/* Title with enhanced gradient */}
               <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-transparent bg-clip-text relative">
-                Private Sector Access
-                <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"></span>
+                Accès Secteur Privé
               </h3>
               
               {/* Description with enhanced typography */}
               <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Now accessible to the private sector. Short-term psychological follow-up, either in accommodation or at home, for a situation of deadlock.
-            </p>
+                Maintenant accessible au secteur privé. Suivi psychologique à court terme, en hébergement ou à domicile, pour une situation d'impasse.
+              </p>
               
               {/* Features list with enhanced styling */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 {[
                   { 
-                    text: "Flexible scheduling", 
+                    text: "Horaire flexible", 
                     icon: <FaClock className="text-3xl" />, 
                     color: "from-purple-500 to-indigo-500",
-                    description: "Book sessions at your convenience"
+                    description: "Réservez vos séances à votre convenance"
                   },
                   { 
-                    text: "Professional support", 
+                    text: "Support professionnel", 
                     icon: <FaUserMd className="text-3xl" />, 
                     color: "from-indigo-500 to-blue-500",
-                    description: "Expert guidance from qualified professionals"
+                    description: "Guidage expert par des professionnels qualifiés"
                   },
                   { 
-                    text: "Tailored solutions", 
+                    text: "Solutions adaptées", 
                     icon: <FaPuzzlePiece className="text-3xl" />, 
                     color: "from-blue-500 to-purple-500",
-                    description: "Personalized approach to your needs"
+                    description: "Approche personnalisée à vos besoins"
                   }
                 ].map((item, i) => (
                   <motion.div

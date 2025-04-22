@@ -79,7 +79,7 @@ export default function Hero() {
           src="/hero-img.JPG"
           alt="Hero Background"
           fill
-          className="object-cover object-center opacity-85"
+          className="object-cover object-center opacity-75"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-purple-900/50 via-purple-800/50 to-indigo-900/50 mix-blend-multiply" />
@@ -173,12 +173,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h1
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-indigo-200 text-transparent bg-clip-text"
+              className="text-5xl text-[fff] md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-indigo-200 text-transparent bg-clip-text"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-                We are the link that breaks your isolation
+                Nous sommes le lien qui brise votre isolement
             </motion.h1>
 
             <motion.p
@@ -187,9 +187,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Monthly subscriptions now available for everyone!
+              Abonnements mensuels maintenant disponibles pour tous !
               <br />
-              Psychological support for individuals and businesses.
+              Soutien psychologique pour les particuliers et les entreprises.
             </motion.p>
 
             <motion.div
@@ -204,18 +204,18 @@ export default function Hero() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                    Subscribe Now
+                    S'abonner
                 </motion.button>
-                  </Link>
+              </Link>
               <Link href="/contact">
                 <motion.button
                   className="px-8 py-4 bg-white/10 backdrop-blur-sm rounded-full text-white font-medium text-lg hover:bg-white/20 transform transition-all duration-200"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                    Contact Us
+                    Nous Contacter
                 </motion.button>
-                  </Link>
+              </Link>
             </motion.div>
 
             <motion.div

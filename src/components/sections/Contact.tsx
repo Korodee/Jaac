@@ -91,7 +91,7 @@ export default function Contact() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
       <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
       
-      <div className="container mx-auto px-4 relative">
+      <div className="container  mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -107,14 +107,14 @@ export default function Contact() {
             className="inline-block"
           >
             <span className="text-purple-600 font-medium text-sm uppercase tracking-widest mb-3 block bg-purple-50 px-4 py-1.5 rounded-full border border-purple-100 shadow-sm">
-              Get in Touch
+              Contactez-nous
             </span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-transparent bg-clip-text">
-            Send Us a Message
+            Envoyez-nous un Message
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Have questions or need assistance? We're here to help. Fill out the form below and we'll get back to you as soon as possible.
+            Vous avez des questions ou besoin d'assistance ? Nous sommes là pour vous aider. Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
           </p>
         </motion.div>
 
@@ -129,7 +129,7 @@ export default function Contact() {
           >
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-purple-100 h-full">
               <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
-                Contact Information
+                Informations de Contact
               </h3>
               
               <div className="space-y-6">
@@ -148,7 +148,7 @@ export default function Contact() {
                     <FaPhone className="text-xl" />
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-800">Phone</h4>
+                    <h4 className="text-lg font-semibold text-gray-800">Téléphone</h4>
                     <p className="text-gray-600">+1 (555) 123-4567</p>
                   </div>
                 </div>
@@ -158,26 +158,26 @@ export default function Contact() {
                     <FaMapMarkerAlt className="text-xl" />
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-gray-800">Location</h4>
-                    <p className="text-gray-600">123 Main Street, Montreal, QC</p>
+                    <h4 className="text-lg font-semibold text-gray-800">Adresse</h4>
+                    <p className="text-gray-600">123 rue Principale, Montréal, QC</p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-8 pt-8 border-t border-gray-200">
-                <h4 className="text-lg font-semibold text-gray-800 mb-4">Business Hours</h4>
+                <h4 className="text-lg font-semibold text-gray-800 mb-4">Heures d'ouverture</h4>
                 <div className="space-y-2">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Monday - Friday</span>
-                    <span className="font-medium">9:00 AM - 6:00 PM</span>
+                    <span className="text-gray-600">Lundi - Vendredi</span>
+                    <span className="font-medium">9h00 - 18h00</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Saturday</span>
-                    <span className="font-medium">10:00 AM - 4:00 PM</span>
+                    <span className="text-gray-600">Samedi</span>
+                    <span className="font-medium">10h00 - 16h00</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Sunday</span>
-                    <span className="font-medium">Closed</span>
+                    <span className="text-gray-600">Dimanche</span>
+                    <span className="font-medium">Fermé</span>
                   </div>
                 </div>
               </div>
@@ -203,8 +203,8 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 group-focus-within:text-purple-600 transition-colors">
-                    Full Name
-                  </label>
+                        Nom Complet
+                      </label>
                       <div className="relative">
                   <input
                     type="text"
@@ -215,7 +215,7 @@ export default function Contact() {
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 ${
                       errors.name ? 'border-red-500' : 'border-gray-300'
                     }`}
-                          placeholder="John Doe"
+                          placeholder="Jean Dupont"
                         />
                         {!errors.name && formData.name && (
                           <div className="absolute right-3 top-1/2 -translate-y-1/2 text-green-500">
@@ -230,8 +230,8 @@ export default function Contact() {
 
                     <div className="group">
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 group-focus-within:text-purple-600 transition-colors">
-                    Email Address
-                  </label>
+                        Adresse Email
+                      </label>
                       <div className="relative">
                   <input
                     type="email"
@@ -242,7 +242,7 @@ export default function Contact() {
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 ${
                       errors.email ? 'border-red-500' : 'border-gray-300'
                     }`}
-                          placeholder="john@example.com"
+                          placeholder="jean@exemple.com"
                         />
                         {!errors.email && formData.email && (
                           <div className="absolute right-3 top-1/2 -translate-y-1/2 text-green-500">
@@ -259,8 +259,8 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1 group-focus-within:text-purple-600 transition-colors">
-                    Phone Number
-                  </label>
+                        Numéro de Téléphone
+                      </label>
                       <div className="relative">
                   <input
                     type="tel"
@@ -286,8 +286,8 @@ export default function Contact() {
 
                     <div className="group">
                       <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1 group-focus-within:text-purple-600 transition-colors">
-                    Subject
-                  </label>
+                        Sujet
+                      </label>
                       <div className="relative">
                   <input
                     type="text"
@@ -298,7 +298,7 @@ export default function Contact() {
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 ${
                       errors.subject ? 'border-red-500' : 'border-gray-300'
                     }`}
-                          placeholder="How can we help?"
+                          placeholder="Comment pouvons-nous vous aider ?"
                         />
                         {!errors.subject && formData.subject && (
                           <div className="absolute right-3 top-1/2 -translate-y-1/2 text-green-500">
@@ -314,8 +314,8 @@ export default function Contact() {
 
                   <div className="group">
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 group-focus-within:text-purple-600 transition-colors">
-                  Message
-                </label>
+                      Message
+                    </label>
                     <div className="relative">
                 <textarea
                   id="message"
@@ -326,7 +326,7 @@ export default function Contact() {
                         className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 ${
                     errors.message ? 'border-red-500' : 'border-gray-300'
                   }`}
-                        placeholder="Your message here..."
+                        placeholder="Votre message ici..."
                       />
                       {!errors.message && formData.message && (
                         <div className="absolute right-3 top-3 text-green-500">
@@ -351,7 +351,7 @@ export default function Contact() {
                     >
                       <span className="relative z-10 flex items-center">
                   <FaPaperPlane className="mr-2" />
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? 'Envoi en cours...' : 'Envoyer le Message'}
                       </span>
                       <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
@@ -376,7 +376,7 @@ export default function Contact() {
                   <FaCheck className="text-green-500 text-xl" />
                 </div>
                 <p className="text-lg font-medium">
-                  Thank you for your message! We'll get back to you soon.
+                  Merci pour votre message ! Nous vous répondrons bientôt.
                 </p>
                 </div>
             </motion.div>

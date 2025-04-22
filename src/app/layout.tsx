@@ -6,8 +6,8 @@ import CustomCursor from '@/components/layout/CustomCursor';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'JAAC - Psychological Support Services',
-  description: 'Professional psychological support and counseling services for individuals and businesses.',
+  title: 'JAAC - Services de Soutien Psychologique',
+  description: 'Services professionnels de soutien psychologique et de counseling pour les particuliers et les entreprises.',
 };
 
 export default function RootLayout({

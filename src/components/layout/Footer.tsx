@@ -109,7 +109,7 @@ export default function Footer() {
               <Logo />
               </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-                JAAC, at your service! Professional psychological support for individuals and businesses.
+                JAAC, à votre service ! Soutien psychologique professionnel pour les particuliers et les entreprises.
               </p>
             <div className="space-y-3">
               <div className="flex items-center text-gray-400 group">
@@ -117,7 +117,7 @@ export default function Footer() {
                   <FaPhone className="text-purple-400 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500">Phone</p>
+                  <p className="text-xs text-gray-500">Téléphone</p>
                 <a href="tel:514-387-1944" className="hover:text-white transition-colors">
                   514-387-1944
                 </a>
@@ -128,7 +128,7 @@ export default function Footer() {
                   <FaPhone className="text-indigo-400 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500">Toll Free</p>
+                  <p className="text-xs text-gray-500">Sans frais</p>
                 <a href="tel:1-844-400-1944" className="hover:text-white transition-colors">
                   1-844-400-1944
                 </a>
@@ -139,7 +139,7 @@ export default function Footer() {
                   <FaMapMarkerAlt className="text-blue-400 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500">Address</p>
+                  <p className="text-xs text-gray-500">Adresse</p>
                 <span>467 Notre-Dame, Suite 206, Repentigny, Quebec, J6A 2T3</span>
                 </div>
               </div>
@@ -149,20 +149,20 @@ export default function Footer() {
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold mb-6 relative inline-block">
-              Quick Links
+              Liens Rapides
               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full"></span>
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link href="/" className="text-gray-400 hover:text-white transition-colors flex items-center group">
                   <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                    Home
+                    Accueil
                   </Link>
                 </li>
                 <li>
                 <Link href="/about" className="text-gray-400 hover:text-white transition-colors flex items-center group">
                   <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                    About Us
+                    À propos
                   </Link>
                 </li>
                 <li>
@@ -180,19 +180,19 @@ export default function Footer() {
                 <li>
                 <Link href="/subscribe" className="text-gray-400 hover:text-white transition-colors flex items-center group">
                   <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                    Subscribe
+                    S'abonner
                   </Link>
                 </li>
               <li>
                 <Link href="/politique-confidentialite" className="text-gray-400 hover:text-white transition-colors flex items-center group">
                   <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                  Privacy Policy
+                  Politique de confidentialité
                 </Link>
               </li>
               <li>
                 <Link href="/politique-cookies" className="text-gray-400 hover:text-white transition-colors flex items-center group">
                   <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                  Cookie Policy
+                  Politique des cookies
                   </Link>
                 </li>
               </ul>
@@ -201,33 +201,33 @@ export default function Footer() {
           {/* Services */}
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold mb-6 relative inline-block">
-              Our Services
+              Nos Services
               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-full"></span>
             </h3>
             <ul className="space-y-3">
               <li className="text-gray-400 flex items-center group">
                 <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                Psychological support & follow-up
+                Soutien et suivi psychologique
               </li>
               <li className="text-gray-400 flex items-center group">
                 <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                Crisis situations
+                Situations de crise
               </li>
               <li className="text-gray-400 flex items-center group">
                 <span className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                Bereavement services
+                Services de deuil
               </li>
               <li className="text-gray-400 flex items-center group">
                 <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                Paramedical services
+                Services paramédicaux
               </li>
               <li className="text-gray-400 flex items-center group">
                 <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                Professional counseling
+                Counseling professionnel
               </li>
               <li className="text-gray-400 flex items-center group">
                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                Telemedicine
+                Télémédecine
               </li>
               </ul>
           </motion.div>
@@ -235,11 +235,11 @@ export default function Footer() {
           {/* Contact */}
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold mb-6 relative inline-block">
-              Contact Us
+              Contactez-nous
               <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full"></span>
             </h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
-                Need help? Contact us for prompt assistance. Your designated support worker will contact you quickly to schedule an appointment.
+                Besoin d'aide ? Contactez-nous pour une assistance rapide. Votre intervenant désigné vous contactera rapidement pour planifier un rendez-vous.
               </p>
               <Link 
                 href="/contact" 
@@ -247,13 +247,13 @@ export default function Footer() {
               >
               <span className="relative z-10 flex items-center">
                 <FaEnvelope className="mr-2" />
-                Get in Touch
+                Nous Contacter
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
             
             <div className="mt-8">
-              <h4 className="text-sm font-medium text-gray-400 mb-4">Follow Us</h4>
+              <h4 className="text-sm font-medium text-gray-400 mb-4">Suivez-nous</h4>
               <div className="flex space-x-3">
                 <motion.a 
                   href="#" 
@@ -305,7 +305,7 @@ export default function Footer() {
               variants={itemVariants}
               className="text-xl font-bold relative inline-block"
             >
-              Our Sponsors
+              Nos Partenaires
               <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full"></span>
             </motion.h3>
           </div>
@@ -322,7 +322,7 @@ export default function Footer() {
               >
                   <Image 
                     src={`/jaac-spons${num}.JPG`} 
-                    alt={`Sponsor ${num}`} 
+                    alt={`Partenaire ${num}`} 
                     fill 
                   className="object-contain p-2"
                   />
@@ -344,19 +344,19 @@ export default function Footer() {
             className="flex flex-col md:flex-row justify-between items-center"
           >
             <p className="text-gray-500 mb-4 md:mb-0">
-              © {currentYear} JAAC. All rights reserved.
+              © {currentYear} JAAC. Tous droits réservés.
             </p>
-            <div className="flex space-x-6">
+            <div className="flex flex-col items-center space-y-2 md:flex-row md:items-start md:space-y-0 md:space-x-6">
               <Link href="/politique-confidentialite" className="text-gray-500 hover:text-white transition-colors text-sm">
-                Privacy Policy
+                Politique de confidentialité
               </Link>
               <Link href="/politique-cookies" className="text-gray-500 hover:text-white transition-colors text-sm">
-                Cookie Policy
+                Politique des cookies
               </Link>
               <Link href="/terms" className="text-gray-500 hover:text-white transition-colors text-sm">
-                Terms of Service
+                Conditions d'utilisation
               </Link>
-          </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

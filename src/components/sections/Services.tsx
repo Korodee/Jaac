@@ -7,57 +7,57 @@ import { useRef } from 'react';
 const services = [
   {
     icon: <FaUserFriends />,
-    title: 'Psychological support and follow-up',
-    description: 'Professional counseling and therapeutic follow-up for individuals and groups.',
+    title: 'Soutien et suivi psychologique',
+    description: 'Counseling professionnel et suivi thérapeutique pour les individus et les groupes.',
     gradient: 'from-purple-500 to-indigo-500',
     shadowColor: 'shadow-purple-500/20'
   },
   {
     icon: <FaHospital />,
-    title: 'Crisis situations',
-    description: 'Immediate support and intervention for crisis situations and emergencies.',
+    title: 'Situations de crise',
+    description: 'Soutien et intervention immédiats pour les situations de crise et les urgences.',
     gradient: 'from-pink-500 to-rose-500',
     shadowColor: 'shadow-pink-500/20'
   },
   {
     icon: <FaHome />,
-    title: 'Social support at your home',
-    description: 'In-home assistance to make your life easier and provide comfort in familiar surroundings.',
+    title: 'Soutien social à domicile',
+    description: 'Assistance à domicile pour faciliter votre vie et apporter du réconfort dans un environnement familier.',
     gradient: 'from-blue-500 to-cyan-500',
     shadowColor: 'shadow-blue-500/20'
   },
   {
     icon: <FaPhone />,
-    title: 'Telemedicine',
-    description: 'Virtual consultations with doctors and nursing services for remote support.',
+    title: 'Télémédecine',
+    description: 'Consultations virtuelles avec des médecins et services de soins infirmiers pour un soutien à distance.',
     gradient: 'from-teal-500 to-emerald-500',
     shadowColor: 'shadow-teal-500/20'
   },
   {
     icon: <FaHeartbeat />,
-    title: 'Mental health prevention',
-    description: 'Proactive approaches to maintain and improve mental health and well-being.',
+    title: 'Prévention en santé mentale',
+    description: 'Approches proactives pour maintenir et améliorer la santé mentale et le bien-être.',
     gradient: 'from-orange-500 to-amber-500',
     shadowColor: 'shadow-orange-500/20'
   },
   {
     icon: <FaHandHoldingHeart />,
-    title: 'Bereavement services',
-    description: 'Compassionate support for those experiencing loss and grief.',
+    title: 'Services de deuil',
+    description: 'Soutien compatissant pour ceux qui traversent une perte et un deuil.',
     gradient: 'from-red-500 to-orange-500',
     shadowColor: 'shadow-red-500/20'
   },
   {
     icon: <FaUserMd />,
-    title: 'Paramedical services',
-    description: 'Professional paramedical support for various health needs.',
+    title: 'Services paramédicaux',
+    description: 'Soutien paramédical professionnel pour divers besoins de santé.',
     gradient: 'from-violet-500 to-purple-500',
     shadowColor: 'shadow-violet-500/20'
   },
   {
     icon: <FaCalendarAlt />,
-    title: 'Holistic health events',
-    description: 'Events and workshops focused on holistic health and well-being.',
+    title: 'Événements santé holistique',
+    description: 'Événements et ateliers axés sur la santé holistique et le bien-être.',
     gradient: 'from-fuchsia-500 to-pink-500',
     shadowColor: 'shadow-fuchsia-500/20'
   }
@@ -124,15 +124,15 @@ export default function Services() {
             className="inline-block"
           >
             <span className="text-purple-600 font-medium text-md uppercase tracking-widest mb-3 block bg-purple-50 px-4 py-1.5 rounded-full">
-              Our Services
+              Nos Services
             </span>
           </motion.div>
           <h2 className="text-3xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-transparent bg-clip-text bg-[size:200%] animate-gradient">
-            Comprehensive Care Solutions
+            Solutions de Soins Complètes
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              The JAAC team offers personal or professional psychological support to help you quickly get your life back on track.
-            </p>
+            L'équipe JAAC offre un soutien psychologique personnel ou professionnel pour vous aider à reprendre rapidement le cours de votre vie.
+          </p>
           {/* Decorative elements */}
           <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl" />
@@ -185,10 +185,10 @@ export default function Services() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="text-left">
                 <h3 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
-                  Multiple Ways to Serve You Better
+                  Plusieurs Façons de Mieux Vous Servir
                 </h3>
                 <p className="text-lg text-gray-700 mb-8">
-                  We serve you through multiple channels to ensure accessibility and convenience:
+                  Nous vous servons à travers plusieurs canaux pour assurer l'accessibilité et la commodité :
                 </p>
                 <ul className="space-y-4">
                   <motion.li 
@@ -198,7 +198,7 @@ export default function Services() {
                     transition={{ delay: 0.1 }}
                   >
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3" />
-                    Professional office consultations
+                    Consultations professionnelles au bureau
                   </motion.li>
                   <motion.li 
                     className="flex items-center text-gray-600"
@@ -207,7 +207,7 @@ export default function Services() {
                     transition={{ delay: 0.2 }}
                   >
                     <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3" />
-                    Home visits for personalized care
+                    Visites à domicile pour des soins personnalisés
                   </motion.li>
                   <motion.li 
                     className="flex items-center text-gray-600"
@@ -216,7 +216,7 @@ export default function Services() {
                     transition={{ delay: 0.3 }}
                   >
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3" />
-                    Video consultations for remote support
+                    Consultations vidéo pour un soutien à distance
                   </motion.li>
                   <motion.li 
                     className="flex items-center text-gray-600"
@@ -225,7 +225,7 @@ export default function Services() {
                     transition={{ delay: 0.4 }}
                   >
                     <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3" />
-                    Phone support for immediate assistance
+                    Support téléphonique pour une assistance immédiate
                   </motion.li>
                 </ul>
               </div>
@@ -233,10 +233,10 @@ export default function Services() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-xl transform rotate-3" />
                 <div className="relative bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg">
                   <h4 className="text-xl font-semibold mb-4 text-gray-900">
-                    Professional Excellence Guaranteed
+                    Excellence Professionnelle Garantie
                   </h4>
                   <p className="text-gray-600 leading-relaxed">
-                    All our practitioners and professional consultants have:
+                    Tous nos praticiens et consultants professionnels ont :
                   </p>
                   <ul className="mt-4 space-y-3">
                     <motion.li 
@@ -246,7 +246,7 @@ export default function Services() {
                       transition={{ delay: 0.1 }}
                     >
                       <span className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-sm mt-0.5">✓</span>
-                      <span className="ml-3 text-gray-600">University education and/or equivalent qualifications</span>
+                      <span className="ml-3 text-gray-600">Formation universitaire et/ou qualifications équivalentes</span>
                     </motion.li>
                     <motion.li 
                       className="flex items-start"

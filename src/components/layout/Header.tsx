@@ -9,10 +9,10 @@ import { usePathname } from 'next/navigation';
 import Logo from './Logo';
 
 const navItems = [
-  { name: 'About', href: '/about' },
+  { name: 'À propos', href: '/about' },
   { name: 'Services', href: '/services' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Subscribe', href: '/subscribe', isSpecial: true },
+  { name: 'S\'abonner', href: '/subscribe', isSpecial: true },
 ];
 
 const MotionLink = motion(Link);
@@ -118,58 +118,64 @@ export default function Header() {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
-              animate={{ opacity: 1, backdropFilter: 'blur(16px)' }}
-              exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center md:hidden"
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] md:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {/* Close button */}
-              <button 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="fixed top-6 right-6 p-3 rounded-full bg-purple-600 hover:bg-purple-700 text-white shadow-lg transform transition-transform duration-200 hover:scale-110 z-50"
-                aria-label="Close menu"
-              >
-                <HiX size={24} />
-              </button>
-
               <motion.nav 
-                initial={{ scale: 0.95, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.95, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="relative flex flex-col space-y-4 bg-gradient-to-b from-purple-900 to-indigo-900 p-6 rounded-2xl mx-4 w-full max-w-sm border border-white/10 shadow-2xl"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="fixed top-0 left-0 right-0 bg-gradient-to-b from-purple-900 to-indigo-900 p-6 shadow-2xl"
                 onClick={e => e.stopPropagation()}
               >
-                {navItems.map((item, index) => {
-                  const isActive = pathname === item.href;
-                  return (
-                    <MotionLink 
-                      key={item.name}
-                      href={item.href}
-                      className={`relative px-6 py-3 rounded-xl transition-all duration-200 ${
-                        item.isSpecial
-                          ? 'bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white font-medium shadow-lg'
-                          : isActive
-                            ? 'bg-white/20 text-white font-medium'
-                            : 'text-white/90 hover:bg-white/10'
-                      }`}
+                <div className="container mx-auto px-4">
+                  <div className="flex justify-between items-center mb-8">
+                    <Logo isScrolled={false} />
+                    <button 
                       onClick={() => setIsMobileMenuOpen(false)}
-                      whileHover={{ scale: 1.02, x: 6 }}
-                      whileTap={{ scale: 0.98 }}
+                      className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+                      aria-label="Close menu"
                     >
-                      <motion.span 
-                        initial={{ x: -10, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ delay: index * 0.1 }}
-                        className="block text-base font-medium"
-                      >
-                        {item.name}
-                      </motion.span>
-                    </MotionLink>
-                  );
-                })}
+                      <HiX size={24} />
+                    </button>
+                  </div>
+                  
+                  <div className="flex flex-col space-y-4">
+                    {navItems.map((item, index) => {
+                      const isActive = pathname === item.href;
+                      return (
+                        <MotionLink 
+                          key={item.name}
+                          href={item.href}
+                          className={`relative px-6 py-3 rounded-xl transition-all duration-200 ${
+                            item.isSpecial
+                              ? 'bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white font-medium shadow-lg'
+                              : isActive
+                                ? 'bg-white/20 text-white font-medium'
+                                : 'text-white/90 hover:bg-white/10'
+                          }`}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          whileHover={{ scale: 1.02, x: 6 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <motion.span 
+                            initial={{ x: -10, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: index * 0.1 }}
+                            className="block text-base font-medium"
+                          >
+                            {item.name}
+                          </motion.span>
+                        </MotionLink>
+                      );
+                    })}
+                  </div>
+                </div>
               </motion.nav>
             </motion.div>
           )}

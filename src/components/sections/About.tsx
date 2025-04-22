@@ -8,26 +8,26 @@ import { useRef } from 'react';
 const benefits = [
   {
     icon: <FaCheckCircle className="text-4xl" />,
-    title: '24/7 phone support',
-    description: 'Round-the-clock assistance whenever you need it.',
+    title: 'Support téléphonique 24/7',
+    description: 'Une assistance disponible à tout moment, jour et nuit.',
     gradient: 'from-purple-500 to-indigo-500'
   },
   {
     icon: <FaUsers className="text-4xl" />,
-    title: 'Monthly subscriptions',
-    description: 'Affordable monthly plans for individuals to facilitate access to our services.',
+    title: 'Abonnements mensuels',
+    description: 'Des forfaits mensuels abordables pour faciliter l\'accès à nos services.',
     gradient: 'from-pink-500 to-purple-500'
   },
   {
     icon: <FaHandshake className="text-4xl" />,
-    title: 'Corporate program',
-    description: 'Tailored support programs for businesses and their employees.',
+    title: 'Programme corporatif',
+    description: 'Des programmes de soutien adaptés aux entreprises et à leurs employés.',
     gradient: 'from-indigo-500 to-blue-500'
   },
   {
     icon: <FaClock className="text-4xl" />,
-    title: 'Turnkey solutions',
-    description: 'We implement support programs that contribute to the well-being of individuals and businesses.',
+    title: 'Solutions clé en main',
+    description: 'Nous mettons en place des programmes de soutien qui contribuent au bien-être des individus et des entreprises.',
     gradient: 'from-violet-500 to-purple-500'
   }
 ];
@@ -76,12 +76,12 @@ export default function About() {
                 className="inline-block"
               >
                 <span className="text-purple-600 font-medium text-sm uppercase tracking-widest mb-3 block bg-purple-50 px-4 py-1.5 rounded-full border border-purple-100 shadow-sm relative overflow-hidden group">
-                  <span className="relative z-10">About JAAC</span>
+                  <span className="relative z-10">À propos de JAAC</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-indigo-100 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                 </span>
               </motion.div>
               <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-8 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-transparent bg-clip-text relative">
-                Who are we?
+                Qui sommes-nous ?
                 <div className="absolute -bottom-2 left-0 w-24 h-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full" />
                 <div className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full transform translate-x-16" />
               </h2>
@@ -99,7 +99,7 @@ export default function About() {
                   <FaQuoteLeft size={24} className="transform group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed pl-8 relative">
-                Since 2015, JAAC has been providing professional paramedical services, psychological therapy, and holistic health support for staff and their families, as well as the general population, to optimize their potential.
+                Depuis 2015, JAAC fournit des services paramédicaux professionnels, une thérapie psychologique et un soutien à la santé holistique pour le personnel et leurs familles, ainsi que pour la population générale, afin d'optimiser leur potentiel.
               </p>
                 <div className="absolute -left-2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-200 to-transparent rounded-full opacity-50" />
                 <div className="absolute -right-2 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-200 to-transparent rounded-full opacity-50" />
@@ -116,7 +116,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-100 to-purple-100 rounded-2xl transform -rotate-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-purple-100 group-hover:shadow-xl transition-shadow duration-300">
                   <p className="text-lg text-gray-700 leading-relaxed">
-                Our current lifestyle demands a pause to process challenging experiences so we can bounce back effectively. JAAC was founded to facilitate this pause, intervening quickly and appropriately with individuals through brief and pragmatic interventions.
+                Notre mode de vie actuel exige une pause pour traiter les expériences difficiles afin de pouvoir rebondir efficacement. JAAC a été fondée pour faciliter cette pause, intervenant rapidement et de manière appropriée auprès des individus grâce à des interventions brèves et pragmatiques.
               </p>
                 </div>
               </motion.div>
@@ -134,7 +134,7 @@ export default function About() {
                   <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px]" />
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.1),rgba(255,255,255,0))]" />
                   <p className="text-lg font-medium leading-relaxed text-white relative">
-                    JAAC has developed a unique monthly subscription structure tailored to the fundamental needs of individuals for psychological support. You will be welcomed as a whole person.
+                    JAAC a développé une structure d'abonnement mensuel unique adaptée aux besoins fondamentaux des individus en matière de soutien psychologique. Vous serez accueilli comme une personne entière.
                 </p>
               </div>
               </motion.div>
@@ -158,14 +158,14 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-pink-200/20 to-purple-200/20 rounded-3xl transform rotate-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <Image
                 src="/jaac2.JPG"
-                alt="JAAC Team"
+                alt="Équipe JAAC"
                 fill
                 className="object-cover rounded-2xl shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 via-purple-900/40 to-transparent rounded-2xl" />
               <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 transform group-hover:translate-y-[-8px] transition-transform duration-300">
                 <p className="text-white text-xl font-semibold relative">
-                  JAAC, an agency serving the people.
+                  JAAC, une agence au service des gens.
                   <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-white/50 rounded-full" />
                   <div className="absolute -bottom-2 left-0 w-6 h-0.5 bg-white/30 rounded-full transform translate-x-16" />
                 </p>
@@ -189,11 +189,11 @@ export default function About() {
               className="inline-block"
             >
               <span className="text-purple-600 font-medium text-sm uppercase tracking-widest mb-3 block bg-purple-50 px-4 py-1.5 rounded-full">
-                Why Choose Us
+                Pourquoi Nous Choisir
               </span>
             </motion.div>
             <h3 className="text-3xl md:text-4xl font-bold mt-4 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-transparent bg-clip-text">
-              Our Benefits
+              Nos Avantages
             </h3>
           </div>
             

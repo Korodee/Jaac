@@ -10,60 +10,60 @@ import { useRef } from 'react';
 const clientTypes = [
   { 
     icon: <FaUsers />, 
-    title: 'Individual & Family', 
-    description: 'Support for individuals and families facing challenges.',
+    title: 'Particuliers & Familles', 
+    description: 'Soutien pour les particuliers et les familles confrontés à des défis.',
     color: 'from-purple-500 to-indigo-500',
-    features: ['Personalized care', 'Family support', 'Flexible scheduling']
+    features: ['Soins personnalisés', 'Soutien familial', 'Horaire flexible']
   },
   { 
     icon: <FaHandshake />, 
-    title: 'Corporate', 
-    description: 'Professional support for businesses and their employees.',
+    title: 'Entreprises', 
+    description: 'Soutien professionnel pour les entreprises et leurs employés.',
     color: 'from-blue-500 to-cyan-500',
-    features: ['Employee wellness', 'Stress management', 'Team building']
+    features: ['Bien-être des employés', 'Gestion du stress', 'Renforcement d\'équipe']
   },
   { 
     icon: <FaHospital />, 
-    title: 'Healthcare', 
-    description: 'Support in hospital settings and after discharge.',
+    title: 'Santé', 
+    description: 'Soutien en milieu hospitalier et après la sortie.',
     color: 'from-green-500 to-emerald-500',
-    features: ['Medical integration', 'Recovery support', 'Professional care']
+    features: ['Intégration médicale', 'Soutien à la récupération', 'Soins professionnels']
   },
   { 
     icon: <FaHome />, 
-    title: 'In-Home Care', 
-    description: 'Personalized care in the comfort of your home.',
+    title: 'Soins à Domicile', 
+    description: 'Soins personnalisés dans le confort de votre foyer.',
     color: 'from-pink-500 to-rose-500',
-    features: ['Comfortable environment', 'Personal attention', 'Flexible care']
+    features: ['Environnement confortable', 'Attention personnelle', 'Soins flexibles']
   },
 ];
 
 const values = [
   {
     icon: <FaHeart />,
-    title: 'Compassionate Care',
-    description: 'We provide empathetic and understanding support to all our clients.',
+    title: 'Soins Empathiques',
+    description: 'Nous offrons un soutien empathique et compréhensif à tous nos clients.',
     color: 'from-red-500 to-pink-500',
-    details: 'Our approach is centered on empathy, understanding, and genuine care for each individual.'
+    details: 'Notre approche est centrée sur l\'empathie, la compréhension et un véritable souci pour chaque individu.'
   },
   {
     icon: <FaStar />,
     title: 'Excellence',
-    description: 'We maintain the highest standards in our professional services.',
+    description: 'Nous maintenons les plus hauts standards dans nos services professionnels.',
     color: 'from-yellow-500 to-amber-500',
-    details: 'We continuously strive for excellence in every aspect of our service delivery.'
+    details: 'Nous visons continuellement l\'excellence dans tous les aspects de notre service.'
   },
   {
     icon: <FaShieldAlt />,
-    title: 'Trust & Security',
-    description: 'Your privacy and well-being are our top priorities.',
+    title: 'Confiance & Sécurité',
+    description: 'Votre vie privée et votre bien-être sont nos priorités absolues.',
     color: 'from-blue-500 to-indigo-500',
-    details: 'We ensure complete confidentiality and create a safe space for healing and growth.'
+    details: 'Nous assurons une confidentialité totale et créons un espace sûr pour la guérison et la croissance.'
   },
   {
     icon: <FaLightbulb />,
     title: 'Innovation',
-    description: 'We continuously evolve our methods to better serve our clients.',
+    description: 'Nous évoluons continuellement nos méthodes pour mieux servir nos clients.',
     color: 'from-purple-500 to-violet-500',
     details: 'We embrace new approaches and technologies to enhance our service quality.'
   }
@@ -100,10 +100,11 @@ export default function AboutPage() {
               className="text-center max-w-4xl mx-auto"
             >
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-indigo-200 text-transparent bg-clip-text">
-                Our Mission & Values
+                À propos de JAAC
               </h1>
               <p className="text-xl text-gray-300">
-                Dedicated to improving mental health through compassionate care and professional excellence
+                Nous fournissons un soutien psychologique professionnel et des services de counseling
+                pour les particuliers et les entreprises.
               </p>
             </motion.div>
           </div>
@@ -124,10 +125,10 @@ export default function AboutPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
-                Our Core Values
+                Nos Valeurs
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                The principles that guide our work and define our approach to mental health care
+                Les principes qui guident notre travail et définissent notre approche pour la santé mentale
               </p>
             </motion.div>
 
@@ -167,10 +168,10 @@ export default function AboutPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-transparent bg-clip-text">
-                Our Clients
+                Nos Clients
               </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                We serve a diverse range of clients with unique needs, providing tailored support for every situation
+                Nous servons une gamme diversifiée de clients avec des besoins uniques, offrant un soutien personnalisé pour chaque situation
                 </p>
             </motion.div>
 
@@ -222,14 +223,14 @@ export default function AboutPage() {
                   <FaQuoteLeft className="text-6xl" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
-                  Our Mission
+                  Notre Mission
                 </h2>
                 <div className="space-y-6 text-lg text-gray-700 relative z-10">
                   <p className="leading-relaxed">
-                  Our agency is the best ally in mental and global health and is distinguished by its humanistic and relational approach tailored to the individual who contributes to improving mental health in our society.
+                  Notre agence est le meilleur allié en santé mentale et globale et est distinguée par son approche humaniste et relationnelle adaptée à la personne qui contribue à améliorer la santé mentale dans notre société.
                 </p>
                   <p className="leading-relaxed">
-                  We provide support and comfort for common life issues, tailored to the current reality. From now on, access to our services for common life problems will be met with responses and support to help individuals quickly resume their lives.
+                  Nous fournissons un soutien et un confort pour les problèmes de la vie quotidienne, adaptés à la réalité actuelle. À partir de maintenant, l'accès à nos services pour les problèmes de la vie quotidienne sera rencontré avec des réponses et un soutien pour aider les individus à reprendre rapidement leur vie.
                 </p>
                 </div>
               </div>

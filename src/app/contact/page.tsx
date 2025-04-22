@@ -10,34 +10,34 @@ import { useRef } from 'react';
 const contactInfo = [
   {
     icon: FaMapMarkerAlt,
-    title: 'Head Office',
+    title: 'Siège Social',
     details: ['585 rue Notre-Dame', 'Repentigny, QC J6A 2T6'],
     color: 'from-purple-500 to-indigo-500',
-    action: 'Get Directions',
+    action: 'Obtenir l\'itinéraire',
     link: 'https://maps.google.com/?q=585+rue+Notre-Dame+Repentigny+QC+J6A+2T6'
   },
   {
     icon: FaPhone,
-    title: 'Phone Numbers',
+    title: 'Numéros de Téléphone',
     details: ['+1 (450) 932-5222', '+1 (514) 932-5222'],
     color: 'from-blue-500 to-cyan-500',
-    action: 'Call Now',
+    action: 'Appeler Maintenant',
     link: 'tel:+14509325222'
   },
   {
     icon: FaEnvelope,
-    title: 'Email',
+    title: 'Courriel',
     details: ['info@jaac.ca'],
     color: 'from-green-500 to-emerald-500',
-    action: 'Send Email',
+    action: 'Envoyer un Courriel',
     link: 'mailto:info@jaac.ca'
   },
   {
     icon: FaClock,
-    title: 'Business Hours',
-    details: ['Monday - Friday: 8:00 AM - 8:00 PM', 'Saturday - Sunday: By appointment'],
+    title: 'Heures d\'Ouverture',
+    details: ['Lundi - Vendredi : 8h00 - 20h00', 'Samedi - Dimanche : Sur rendez-vous'],
     color: 'from-pink-500 to-rose-500',
-    action: 'Schedule Appointment',
+    action: 'Prendre Rendez-vous',
     link: '/contact'
   }
 ];
@@ -57,7 +57,7 @@ export default function ContactPage() {
       <Header />
       <main ref={containerRef}>
         {/* Hero Section */}
-        <section className="relative  overflow-hidden bg-gradient-to-b from-purple-900 via-purple-800 to-indigo-900">
+        <section className="relative pt-[8rem] pb-[4rem] overflow-hidden bg-gradient-to-b from-purple-900 via-purple-800 to-indigo-900">
           <motion.div 
             className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:72px_72px]"
             style={{ y, opacity }}
@@ -70,12 +70,12 @@ export default function ContactPage() {
               viewport={{ once: true }}
               className="text-center max-w-4xl mx-auto"
             >
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-indigo-200 text-transparent bg-clip-text">
-                Get in Touch
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-white to-purple-100 text-transparent bg-clip-text">
+                Contactez-nous
               </h1>
               <p className="text-xl text-gray-300">
-                Whether you're seeking support, have questions about our services, or want to join our network,
-                we're here to help. Reach out to us through any of the following channels.
+                Que vous cherchiez du soutien, ayez des questions sur nos services ou souhaitiez rejoindre notre réseau,
+                nous sommes là pour vous aider. Contactez-nous par l'un des canaux suivants.
               </p>
             </motion.div>
           </div>
@@ -133,10 +133,10 @@ export default function ContactPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
-                Visit Our Office
+                Visitez Nos Bureaux
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Find us at our convenient location in Repentigny, Quebec
+                Retrouvez-nous à notre emplacement pratique à Repentigny, Québec
               </p>
             </motion.div>
 

@@ -11,6 +11,7 @@ const CustomCursor = () => {
   const [isClicking, setIsClicking] = useState(false);
   const [cursorVariant, setCursorVariant] = useState('default');
   const [isVisible, setIsVisible] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const springConfig = { damping: 25, stiffness: 700 };
   const cursorXSpring = useSpring(cursorX, springConfig);
@@ -48,96 +49,114 @@ const CustomCursor = () => {
   };
 
   useEffect(() => {
-    // Hide default cursor
-    document.body.style.cursor = 'none';
-    
-    const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-      
-      // Update trailing cursor with delay
-      setTimeout(() => {
-        cursorTrailX.set(e.clientX);
-        cursorTrailY.set(e.clientY);
-      }, 50);
-      
-      // Update outer ring with more delay
-      setTimeout(() => {
-        cursorRingX.set(e.clientX);
-        cursorRingY.set(e.clientY);
-      }, 100);
-      
-      // Show cursor if it was hidden
-      if (!isVisible) setIsVisible(true);
-    };
-
-    const handleMouseDown = () => {
-      setIsClicking(true);
-      
-      // Create particles on click
-      const newParticles = Array.from({ length: 5 }, (_, i) => ({
-        id: particleId + i,
-        x: cursorX.get(),
-        y: cursorY.get(),
-        size: Math.random() * 8 + 4,
-        color: i % 2 === 0 ? '#a855f7' : '#6366f1'
-      }));
-      
-      setParticles(prev => [...prev, ...newParticles]);
-      setParticleId(prev => prev + 5);
-      
-      // Remove particles after animation
-      setTimeout(() => {
-        setParticles(prev => prev.filter(p => !newParticles.find(np => np.id === p.id)));
-      }, 1000);
+    // Check if device is desktop
+    const checkIfDesktop = () => {
+      setIsDesktop(window.matchMedia('(min-width: 1024px)').matches);
     };
     
-    const handleMouseUp = () => setIsClicking(false);
+    // Initial check
+    checkIfDesktop();
     
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
+    // Add resize listener
+    window.addEventListener('resize', checkIfDesktop);
     
-    const handleHoverStart = () => {
-      setIsHovering(true);
-      setCursorVariant('link');
-    };
-    
-    const handleHoverEnd = () => {
-      setIsHovering(false);
-      setCursorVariant('default');
-    };
-
-    document.addEventListener('mousemove', moveCursor);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup', handleMouseUp);
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
-
-    const links = document.querySelectorAll('a, button, [role="button"]');
-    links.forEach(link => {
-      link.addEventListener('mouseenter', handleHoverStart);
-      link.addEventListener('mouseleave', handleHoverEnd);
-    });
-
-    return () => {
-      // Restore default cursor
-      document.body.style.cursor = 'auto';
+    // Only initialize cursor if on desktop
+    if (isDesktop) {
+      // Hide default cursor
+      document.body.style.cursor = 'none';
       
-      document.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mouseup', handleMouseUp);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseenter', handleMouseEnter);
+      const moveCursor = (e: MouseEvent) => {
+        cursorX.set(e.clientX);
+        cursorY.set(e.clientY);
+        
+        // Update trailing cursor with delay
+        setTimeout(() => {
+          cursorTrailX.set(e.clientX);
+          cursorTrailY.set(e.clientY);
+        }, 50);
+        
+        // Update outer ring with more delay
+        setTimeout(() => {
+          cursorRingX.set(e.clientX);
+          cursorRingY.set(e.clientY);
+        }, 100);
+        
+        // Show cursor if it was hidden
+        if (!isVisible) setIsVisible(true);
+      };
+
+      const handleMouseDown = () => {
+        setIsClicking(true);
+        
+        // Create particles on click
+        const newParticles = Array.from({ length: 5 }, (_, i) => ({
+          id: particleId + i,
+          x: cursorX.get(),
+          y: cursorY.get(),
+          size: Math.random() * 8 + 4,
+          color: i % 2 === 0 ? '#a855f7' : '#6366f1'
+        }));
+        
+        setParticles(prev => [...prev, ...newParticles]);
+        setParticleId(prev => prev + 5);
+        
+        // Remove particles after animation
+        setTimeout(() => {
+          setParticles(prev => prev.filter(p => !newParticles.find(np => np.id === p.id)));
+        }, 1000);
+      };
       
+      const handleMouseUp = () => setIsClicking(false);
+      
+      const handleMouseLeave = () => setIsVisible(false);
+      const handleMouseEnter = () => setIsVisible(true);
+      
+      const handleHoverStart = () => {
+        setIsHovering(true);
+        setCursorVariant('link');
+      };
+      
+      const handleHoverEnd = () => {
+        setIsHovering(false);
+        setCursorVariant('default');
+      };
+
+      document.addEventListener('mousemove', moveCursor);
+      document.addEventListener('mousedown', handleMouseDown);
+      document.addEventListener('mouseup', handleMouseUp);
+      document.addEventListener('mouseleave', handleMouseLeave);
+      document.addEventListener('mouseenter', handleMouseEnter);
+
+      const links = document.querySelectorAll('a, button, [role="button"]');
       links.forEach(link => {
-        link.removeEventListener('mouseenter', handleHoverStart);
-        link.removeEventListener('mouseleave', handleHoverEnd);
+        link.addEventListener('mouseenter', handleHoverStart);
+        link.addEventListener('mouseleave', handleHoverEnd);
       });
-    };
-  }, [cursorX, cursorY, cursorTrailX, cursorTrailY, cursorRingX, cursorRingY, isVisible, particleId]);
 
-  // Don't render if not visible
-  if (!isVisible) return null;
+      return () => {
+        // Restore default cursor
+        document.body.style.cursor = 'auto';
+        
+        document.removeEventListener('mousemove', moveCursor);
+        document.removeEventListener('mousedown', handleMouseDown);
+        document.removeEventListener('mouseup', handleMouseUp);
+        document.removeEventListener('mouseleave', handleMouseLeave);
+        document.removeEventListener('mouseenter', handleMouseEnter);
+        
+        links.forEach(link => {
+          link.removeEventListener('mouseenter', handleHoverStart);
+          link.removeEventListener('mouseleave', handleHoverEnd);
+        });
+      };
+    }
+    
+    return () => {
+      window.removeEventListener('resize', checkIfDesktop);
+    };
+  }, [cursorX, cursorY, cursorTrailX, cursorTrailY, cursorRingX, cursorRingY, isVisible, particleId, isDesktop]);
+
+  // Don't render if not visible or not desktop
+  if (!isVisible || !isDesktop) return null;
 
   return (
     <>

@@ -26,10 +26,10 @@ export default function ServicesPage() {
               className="text-center max-w-4xl mx-auto"
             >
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-indigo-200 text-transparent bg-clip-text">
-                Our Services
+                Nos Services
               </h1>
               <p className="text-xl text-gray-300">
-                Discover our comprehensive range of psychological and mental health services designed to support your well-being journey.
+                Découvrez notre gamme complète de services psychologiques et de santé mentale conçus pour soutenir votre parcours vers le bien-être.
               </p>
             </motion.div>
           </div>
