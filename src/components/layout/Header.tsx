@@ -53,7 +53,7 @@ export default function Header() {
           : 'bg-transparent py-2'
       }`}
     >
-      <div className="container py-2 mx-auto px-6">
+      <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
           <Logo isScrolled={pathname === '/about' ? true : isScrolled} />
 
@@ -141,11 +141,11 @@ export default function Header() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="fixed top-0 left-0 right-0 bg-gradient-to-b from-purple-900 to-indigo-900 p-6 shadow-2xl"
+                className="fixed top-0 left-0 right-0 bg-gradient-to-b from-purple-900 to-indigo-900 px-4 pt-4 pb-6 shadow-2xl"
                 onClick={e => e.stopPropagation()}
               >
-                <div className="container mx-auto px-4">
-                  <div className="flex justify-between items-center mb-8">
+                <div className="container mx-auto px-2">
+                  <div className="flex justify-between items-center mb-2">
                     <Logo isScrolled={false} />
                     <button 
                       onClick={() => setIsMobileMenuOpen(false)}
