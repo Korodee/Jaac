@@ -123,7 +123,7 @@ export default function Footer() {
                 >
                   <div className="relative w-[5rem] h-[6rem] md:w-[5rem] md:h-[6rem]">
                     <Image
-                      src="/jaac-logo2.png"
+                      src="/jaac-logo2.PNG"
                       alt="JAAC Logo"
                       fill
                       className="object-contain brightness-0 invert transition-all duration-500"

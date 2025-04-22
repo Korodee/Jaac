@@ -44,7 +44,7 @@ export default function Logo({ isScrolled: externalIsScrolled }: LogoProps) {
       >
         <div className="relative w-[4rem] h-[5rem] md:w-[5rem] md:h-[6rem]">
           <Image
-            src="/jaac-logo2.png"
+            src="/jaac-logo2.PNG"
             alt="JAAC Logo"
             fill
             className={`object-contain transition-all duration-500 ${shouldBePurple ? 'brightness-100' : 'brightness-0 invert'}`}
