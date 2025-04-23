@@ -1,51 +1,60 @@
-'use client';
+"use client";
 
-import Contact from '@/components/sections/Contact';
-import Header from '@/components/layout/Header';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaArrowRight } from 'react-icons/fa';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import Contact from "@/components/sections/Contact";
+import Header from "@/components/layout/Header";
+import {
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+  FaClock,
+  FaArrowRight,
+} from "react-icons/fa";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const contactInfo = [
   {
     icon: FaMapMarkerAlt,
-    title: 'Siège Social',
-    details: ['585 rue Notre-Dame', 'Repentigny, QC J6A 2T6'],
-    color: 'from-purple-500 to-indigo-500',
-    action: 'Obtenir l\'itinéraire',
-    link: 'https://maps.google.com/?q=585+rue+Notre-Dame+Repentigny+QC+J6A+2T6'
+    title: "Siège Social",
+    details: ["585 rue Notre-Dame", "Repentigny, QC J6A 2T6"],
+    color: "from-purple-500 to-indigo-500",
+    action: "Obtenir l'itinéraire",
+    link: "https://maps.google.com/?q=585+rue+Notre-Dame+Repentigny+QC+J6A+2T6",
   },
   {
     icon: FaPhone,
-    title: 'Numéros de Téléphone',
-    details: ['+1 (450) 932-5222', '+1 (514) 932-5222'],
-    color: 'from-blue-500 to-cyan-500',
-    action: 'Appeler Maintenant',
-    link: 'tel:+14509325222'
+    title: "Numéros de Téléphone",
+    details: ["+1 (450) 932-5222", "+1 (514) 932-5222"],
+    color: "from-blue-500 to-cyan-500",
+    action: "Appeler Maintenant",
+    link: "tel:+14509325222",
   },
   {
     icon: FaEnvelope,
-    title: 'Courriel',
-    details: ['info@jaac.ca'],
-    color: 'from-green-500 to-emerald-500',
-    action: 'Envoyer un Courriel',
-    link: 'mailto:info@jaac.ca'
+    title: "Courriel",
+    details: ["info@jaac.ca"],
+    color: "from-green-500 to-emerald-500",
+    action: "Envoyer un Courriel",
+    link: "mailto:info@jaac.ca",
   },
   {
     icon: FaClock,
-    title: 'Heures d\'Ouverture',
-    details: ['Lundi - Vendredi : 8h00 - 20h00', 'Samedi - Dimanche : Sur rendez-vous'],
-    color: 'from-pink-500 to-rose-500',
-    action: 'Prendre Rendez-vous',
-    link: '/contact'
-  }
+    title: "Heures d'Ouverture",
+    details: [
+      "Lundi - Vendredi : 8h00 - 20h00",
+      "Samedi - Dimanche : Sur rendez-vous",
+    ],
+    color: "from-pink-500 to-rose-500",
+    action: "Prendre Rendez-vous",
+    link: "/contact",
+  },
 ];
 
 export default function ContactPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
@@ -57,7 +66,7 @@ export default function ContactPage() {
       <main ref={containerRef}>
         {/* Hero Section */}
         <section className="relative pt-[8rem] pb-[4rem] overflow-hidden bg-gradient-to-b from-purple-900 via-purple-800 to-indigo-900">
-          <motion.div 
+          <motion.div
             className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:72px_72px]"
             style={{ y, opacity }}
           />
@@ -73,8 +82,9 @@ export default function ContactPage() {
                 Contactez-nous
               </h1>
               <p className="text-xl text-gray-300">
-                Que vous cherchiez du soutien, ayez des questions sur nos services ou souhaitiez rejoindre notre réseau,
-                nous sommes là pour vous aider. Contactez-nous par l'un des canaux suivants.
+                Que vous cherchiez du soutien, ayez des questions sur nos
+                services ou souhaitiez rejoindre notre réseau, nous sommes là
+                pour vous aider. Contactez-nous par l'un des canaux suivants.
               </p>
             </motion.div>
           </div>
@@ -94,17 +104,23 @@ export default function ContactPage() {
                   className="group"
                 >
                   <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
-                    <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${info.color}`} />
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${info.color} p-4 mb-6 text-white text-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
+                    <div
+                      className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${info.color}`}
+                    />
+                    <div
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${info.color} p-4 mb-6 text-white text-2xl flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}
+                    >
                       <info.icon />
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{info.title}</h3>
                     <div className="space-y-2 mb-6">
                       {info.details.map((detail, i) => (
-                        <p key={i} className="text-gray-600">{detail}</p>
+                        <p key={i} className="text-gray-600">
+                          {detail}
+                        </p>
                       ))}
                     </div>
-                    <a 
+                    <a
                       href={info.link}
                       className={`inline-flex items-center text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r ${info.color} hover:opacity-80 transition-opacity`}
                     >
@@ -162,10 +178,12 @@ export default function ContactPage() {
                 <div className="p-6 bg-gradient-to-r from-purple-50 to-indigo-50">
                   <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-800">585 rue Notre-Dame</h3>
+                      <h3 className="text-xl font-semibold text-gray-800">
+                        585 rue Notre-Dame
+                      </h3>
                       <p className="text-gray-600">Repentigny, QC J6A 2T6</p>
                     </div>
-                    <a 
+                    <a
                       href="https://maps.google.com/?q=585+rue+Notre-Dame+Repentigny+QC+J6A+2T6"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -183,4 +201,4 @@ export default function ContactPage() {
       </main>
     </>
   );
-} 
+}

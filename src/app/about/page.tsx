@@ -57,7 +57,7 @@ const values = [
     title: 'Confiance & Sécurité',
     description: 'Votre vie privée et votre bien-être sont nos priorités absolues.',
     color: 'from-blue-500 to-indigo-500',
-    details: 'Nous assurons une confidentialité totale et créons un espace sûr pour la guérison et la croissance.'
+    details: 'Nous assurons une confidentialité totale et créons un espace sûr pour l’épanouissement et la croissance.'
   },
   {
     icon: <FaLightbulb />,

@@ -198,15 +198,19 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <Link href="/subscribe">
-                <motion.button
-                  className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full text-white font-medium text-lg shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 transform transition-all duration-200"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  S'abonner
-                </motion.button>
-              </Link>
+              <motion.button
+                onClick={() => {
+                  const pricingSection = document.getElementById("pricing");
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full text-white font-medium text-lg shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-105 transform transition-all duration-200"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                S'abonner
+              </motion.button>
               <Link href="/contact">
                 <motion.button
                   className="px-8 py-4 bg-white/10 backdrop-blur-sm rounded-full text-white font-medium text-lg hover:bg-white/20 transform transition-all duration-200"
