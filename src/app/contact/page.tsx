@@ -32,10 +32,10 @@ const contactInfo = [
   {
     icon: FaEnvelope,
     title: "Courriel",
-    details: ["info@jaac.ca"],
+    details: ["jaac.team@gmail.com"],
     color: "from-green-500 to-emerald-500",
     action: "Envoyer un Courriel",
-    link: "mailto:info@jaac.ca",
+    link: "mailto:jaac.team@gmail.com",
   },
   {
     icon: FaClock,

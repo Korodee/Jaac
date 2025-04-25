@@ -137,7 +137,7 @@ const CookiePolicy = () => {
               Repentigny, Québec, J6A 2T3<br />
               Canada<br /><br />
               Site web : <a href="https://jaac.ca" className="text-blue-600 hover:underline">https://jaac.ca</a><br />
-              Courriel : <a href="mailto:info@jaac.ca" className="text-blue-600 hover:underline">info@jaac.ca</a><br />
+              Courriel : <a href="mailto:jaac.team@gmail.com" className="text-blue-600 hover:underline">jaac.team@gmail.com</a><br />
               Téléphone : <a href="tel:514-387-1944" className="text-blue-600 hover:underline">514-387-1944</a>
             </address>
             <p className="text-sm text-gray-600 mt-6">

@@ -279,7 +279,7 @@ export default function Subscribe() {
             la carte. Une intervention de 30 minutes pour vous aider à y voir
             plus clair dans votre situation avec notre méthode brève, rapide et
             efficace.
-          </p>
+            </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -304,27 +304,27 @@ export default function Subscribe() {
                     Populaire
                   </div>
                 )}
-
+                
                 <div
                   className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${plan.gradient} mb-6 text-white transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-6`}
                 >
                   {plan.icon}
                 </div>
-
+                
                 <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
                 <p className="text-gray-600 mb-4">{plan.description}</p>
-
+                
                 <div className="mb-6">
                   <span className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
                     {plan.price}$
                   </span>
                   <span className="text-gray-500 ml-2">{plan.period}</span>
                 </div>
-
+                
                 <ul className="space-y-3 mb-8 flex-grow">
                   {plan.features.map((feature, i) => (
-                    <motion.li
-                      key={i}
+                    <motion.li 
+                      key={i} 
                       className="flex items-start"
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -340,8 +340,8 @@ export default function Subscribe() {
                     </motion.li>
                   ))}
                 </ul>
-
-                <Button
+                
+                <Button 
                   variant={selectedPlan === plan.id ? "primary" : "outline"}
                   className={`w-full relative overflow-hidden group ${
                     selectedPlan === plan.id
@@ -362,7 +362,7 @@ export default function Subscribe() {
                   )}
                 </Button>
               </div>
-            </motion.div>
+              </motion.div>
           ))}
         </div>
 
@@ -377,58 +377,58 @@ export default function Subscribe() {
           <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full opacity-10 blur-xl" />
           <div className="absolute -bottom-10 right-1/4 w-32 h-32 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full opacity-10 blur-xl" />
           <div className="absolute -bottom-5 left-1/4 w-24 h-24 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full opacity-10 blur-xl" />
-
+          
           {/* Main content container */}
           <div className="relative">
             {/* Background layers with enhanced gradients */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-100 via-indigo-100 to-purple-100 rounded-2xl transform -rotate-1" />
             <div className="absolute inset-0 bg-gradient-to-r from-pink-100 via-purple-100 to-indigo-100 rounded-2xl transform rotate-1" />
             <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-transparent rounded-2xl" />
-
+            
             {/* Content card with enhanced styling */}
             <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-xl border border-purple-100/50 overflow-hidden">
               {/* Decorative elements */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-500 rounded-full" />
               <div className="absolute -right-20 -top-20 w-40 h-40 bg-purple-200 rounded-full opacity-20 blur-2xl" />
               <div className="absolute -left-20 -bottom-20 w-40 h-40 bg-indigo-200 rounded-full opacity-20 blur-2xl" />
-
+              
               {/* Icon with enhanced styling */}
               <div className="mb-6 inline-flex p-4 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-500 text-white shadow-lg relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <FaHandHoldingHeart className="text-3xl relative z-10 group-hover:scale-110 transition-transform duration-300" />
               </div>
-
+              
               {/* Title with enhanced gradient */}
               <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 text-transparent bg-clip-text relative">
                 Accès Secteur Privé
               </h3>
-
+              
               {/* Description with enhanced typography */}
               <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
                 Maintenant accessible au secteur privé. Suivi psychologique à
                 court terme, en hébergement ou à domicile, pour une situation
                 d'impasse.
-              </p>
-
+            </p>
+              
               {/* Features list with enhanced styling */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 {[
-                  {
+                  { 
                     text: "Horaire flexible",
-                    icon: <FaClock className="text-3xl" />,
+                    icon: <FaClock className="text-3xl" />, 
                     color: "from-purple-500 to-indigo-500",
                     description: "Réservez vos séances à votre convenance",
                   },
-                  {
+                  { 
                     text: "Support professionnel",
-                    icon: <FaUserMd className="text-3xl" />,
+                    icon: <FaUserMd className="text-3xl" />, 
                     color: "from-indigo-500 to-blue-500",
                     description:
                       "Guidage expert par des professionnels qualifiés",
                   },
-                  {
+                  { 
                     text: "Solutions adaptées",
-                    icon: <FaPuzzlePiece className="text-3xl" />,
+                    icon: <FaPuzzlePiece className="text-3xl" />, 
                     color: "from-blue-500 to-purple-500",
                     description: "Approche personnalisée à vos besoins",
                   },
@@ -458,12 +458,12 @@ export default function Subscribe() {
                   </motion.div>
                 ))}
               </div>
-
+              
               {/* CTA Button with enhanced styling */}
               <div className="flex justify-center">
-                <Button
-                  variant="primary"
-                  size="lg"
+            <Button 
+              variant="primary" 
+              size="lg"
                   className="relative overflow-hidden group px-8 py-4 rounded-xl"
                 >
                   <span className="relative z-10 font-medium">
@@ -473,7 +473,7 @@ export default function Subscribe() {
                   <div className="absolute -right-2 -top-2 w-4 h-4 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute -left-2 -bottom-2 w-4 h-4 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </Button>
+            </Button>
               </div>
             </div>
           </div>
@@ -774,4 +774,4 @@ export default function Subscribe() {
       </AnimatePresence>
     </section>
   );
-}
+} 

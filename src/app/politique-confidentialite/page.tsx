@@ -225,7 +225,7 @@ export default function PrivacyPolicy() {
               <div className="mt-6 bg-emerald-50 p-4 rounded-lg border border-emerald-100 flex items-start">
                 <FaEnvelope className="text-emerald-500 mt-1 mr-3 flex-shrink-0" />
                 <p className="text-gray-600">
-                  Pour exercer ces droits, veuillez nous contacter à <a href="mailto:info@jaac.ca" className="text-emerald-600 hover:underline font-medium">info@jaac.ca</a>.
+                  Pour exercer ces droits, veuillez nous contacter à <a href="mailto:jaac.team@gmail.com" className="text-emerald-600 hover:underline font-medium">jaac.team@gmail.com</a>.
                 </p>
               </div>
             </motion.div>
