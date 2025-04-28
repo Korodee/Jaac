@@ -12,8 +12,8 @@ import {
   FaClock,
   FaUserMd,
   FaPuzzlePiece,
-  FaGooglePay,
 } from "react-icons/fa";
+import Image from "next/image";
 import Button from "../ui/Button";
 import {
   createSubscription,
@@ -492,282 +492,260 @@ export default function Subscribe() {
             onClick={() => setShowPaymentModal(false)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-2xl p-6 md:p-8 max-w-md w-full shadow-2xl"
+              className="bg-white rounded-3xl max-w-xl w-full shadow-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                  Paiement avec Google Pay
-                </h3>
-                <p className="text-gray-600">
-                  {selectedPlanDetails.title} - {selectedPlanDetails.price}${" "}
-                  {selectedPlanDetails.period}
-                </p>
+              {/* Header Section */}
+              <div className="relative bg-gradient-to-r from-purple-600 to-indigo-600 px-8 py-6 text-white overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(40deg,transparent_25%,rgba(255,255,255,0.1)_50%,transparent_75%)] opacity-20"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1)_0%,transparent_50%)]"></div>
+                <div className="relative flex items-center justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-1">
+                      {selectedPlanDetails.title}
+                    </h3>
+                    <p className="text-purple-100">
+                      {selectedPlanDetails.price}$ {selectedPlanDetails.period}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setShowPaymentModal(false)}
+                    title="Fermer"
+                    className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                  >
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
-              {paymentStatus === "idle" && (
-                <div className="space-y-6">
-                  <div className="bg-gray-50 p-4 rounded-xl">
-                    <div className="flex items-center justify-between gap-2 mb-2">
-                      <span className="text-gray-600">Forfait</span>
-                      <span className="font-medium">
-                        {selectedPlanDetails.title}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2 justify-between mb-2">
-                      <span className="text-gray-600">Prix</span>
-                      <span className="font-medium">
-                        {selectedPlanDetails.price}${" "}
-                        {selectedPlanDetails.period}
-                      </span>
-                    </div>
-                    <div className="border-t border-gray-200 my-2 pt-2">
-                      <div className="flex items-center justify-between">
-                        <span className="font-medium">Total</span>
-                        <span className="font-bold text-lg">
-                          {selectedPlanDetails.price}$
-                        </span>
+              <div className="px-8 py-6">
+                {paymentStatus === "idle" && (
+                  <div className="space-y-6 pb-8">
+                    {/* Summary Card */}
+                    <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                      <h4 className="font-medium text-gray-800 mb-4">Résumé de la commande</h4>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-gray-600">Forfait</span>
+                          <span className="font-medium text-gray-800">{selectedPlanDetails.title}</span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-gray-600">Prix</span>
+                          <span className="font-medium text-gray-800">{selectedPlanDetails.price}$ {selectedPlanDetails.period}</span>
+                        </div>
+                        <div className="pt-3 mt-3 border-t border-gray-100">
+                          <div className="flex items-center justify-between">
+                            <span className="font-medium text-gray-800">Total</span>
+                            <span className="text-xl font-bold text-purple-600">{selectedPlanDetails.price}$</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <form className="space-y-4">
-                    <div>
-                      <label
-                        htmlFor="fullName"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Nom complet <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="fullName"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-2 border ${
-                          formErrors.fullName
-                            ? "border-red-500"
-                            : "border-gray-300"
-                        } rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent`}
-                        placeholder="Votre nom complet"
-                      />
-                      {formErrors.fullName && (
-                        <p className="mt-1 text-sm text-red-500">
-                          {formErrors.fullName}
-                        </p>
-                      )}
-                    </div>
+                    {/* Form Fields */}
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
+                            Nom complet <span className="text-red-500">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            value={formData.fullName}
+                            onChange={handleInputChange}
+                            className={`w-full px-4 py-2.5 bg-white border ${
+                              formErrors.fullName ? "border-red-500" : "border-gray-200"
+                            } rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
+                            placeholder="Votre nom complet"
+                          />
+                          {formErrors.fullName && (
+                            <p className="mt-1 text-sm text-red-500">{formErrors.fullName}</p>
+                          )}
+                        </div>
 
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Email <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className={`w-full px-4 py-2 border ${
-                          formErrors.email
-                            ? "border-red-500"
-                            : "border-gray-300"
-                        } rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent`}
-                        placeholder="votre@email.com"
-                      />
-                      {formErrors.email && (
-                        <p className="mt-1 text-sm text-red-500">
-                          {formErrors.email}
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Téléphone
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                        placeholder="Votre numéro de téléphone"
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="company"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Entreprise (optionnel)
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                        placeholder="Nom de votre entreprise"
-                      />
-                    </div>
-
-                    <div className="flex items-start">
-                      <div className="flex items-center h-5">
-                        <input
-                          id="acceptTerms"
-                          name="acceptTerms"
-                          type="checkbox"
-                          checked={formData.acceptTerms}
-                          onChange={handleInputChange}
-                          className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
-                        />
+                        <div>
+                          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                            Email <span className="text-red-500">*</span>
+                          </label>
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            className={`w-full px-4 py-2.5 bg-white border ${
+                              formErrors.email ? "border-red-500" : "border-gray-200"
+                            } rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200`}
+                            placeholder="votre@email.com"
+                          />
+                          {formErrors.email && (
+                            <p className="mt-1 text-sm text-red-500">{formErrors.email}</p>
+                          )}
+                        </div>
                       </div>
-                      <div className="ml-3 text-sm">
-                        <label
-                          htmlFor="acceptTerms"
-                          className="font-medium text-gray-700"
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                            Téléphone
+                          </label>
+                          <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                            placeholder="Votre numéro de téléphone"
+                          />
+                        </div>
+
+                        <div>
+                          <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                            Entreprise (optionnel)
+                          </label>
+                          <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            value={formData.company}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                            placeholder="Nom de votre entreprise"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex items-start py-2">
+                        <div className="flex items-center h-5">
+                          <input
+                            id="acceptTerms"
+                            name="acceptTerms"
+                            type="checkbox"
+                            checked={formData.acceptTerms}
+                            onChange={handleInputChange}
+                            className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded transition-all duration-200"
+                          />
+                        </div>
+                        <div className="ml-3">
+                          <label htmlFor="acceptTerms" className="text-sm text-gray-700">
+                            J'accepte les{" "}
+                            <a href="/politique-confidentialite" className="text-purple-600 hover:text-purple-700 font-medium">
+                              conditions d'utilisation
+                            </a>{" "}
+                            <span className="text-red-500">*</span>
+                          </label>
+                          {formErrors.acceptTerms && (
+                            <p className="mt-1 text-sm text-red-500">{formErrors.acceptTerms}</p>
+                          )}
+                        </div>
+                      </div>
+
+                      {!googlePayAvailable && (
+                        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-amber-800 text-sm">
+                          <div className="flex items-center space-x-3">
+                            <svg className="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <p>Google Pay n'est pas disponible sur votre appareil.</p>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="pt-6 flex flex-col items-center gap-4">
+                        {/* Section Title and Divider */}
+                        {/* Google Pay Button */}
+                        <button
+                          onClick={handleGooglePay}
+                          disabled={!googlePayAvailable}
+                          title="Payer avec Google Pay"
+                          className={`w-[340px] max-w-full h-[56px] bg-white border border-gray-300 rounded-full flex items-center gap-4 px-6 shadow-md focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 transition-transform duration-150 active:scale-95 hover:shadow-lg group relative overflow-hidden ${
+                            !googlePayAvailable ? "opacity-50 cursor-not-allowed" : "hover:border-gray-400"
+                          }`}
+                          style={{ boxShadow: '0 4px 16px 0 rgba(0,0,0,0.08)' }}
                         >
-                          J'accepte les{" "}
-                          <a
-                            href="/politique-confidentialite"
-                            className="text-purple-600 hover:text-purple-500"
-                          >
-                            conditions d'utilisation
-                          </a>{" "}
-                          <span className="text-red-500">*</span>
-                        </label>
-                        {formErrors.acceptTerms && (
-                          <p className="mt-1 text-sm text-red-500">
-                            {formErrors.acceptTerms}
-                          </p>
-                        )}
+                          {/* Ripple effect */}
+                          <span className="absolute inset-0 group-active:scale-110 group-active:bg-gray-100 transition-transform duration-200 rounded-full pointer-events-none" />
+                          {/* Lock Icon */}
+                          <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="8" rx="2"/><path d="M8 11V7a4 4 0 1 1 8 0v4"/></svg>
+                          {/* Google Pay Logo */}
+                          <Image
+                            src="/google-pay-logo.png"
+                            alt="Google Pay"
+                            width={38}
+                            height={38}
+                            className=""
+                            priority
+                          />
+                          <span className="text-gray-900 text-lg font-semibold tracking-wide">Payer avec Google Pay</span>
+                        </button>
+                        {/* Cancel Button */}
+                        <button
+                          type="button"
+                          onClick={() => setShowPaymentModal(false)}
+                          className="mt-1 text-gray-500 hover:text-purple-600 underline underline-offset-4 transition-colors text-base font-medium focus:outline-none"
+                        >
+                          Annuler
+                        </button>
                       </div>
                     </div>
-                  </form>
+                  </div>
+                )}
 
-                  {!googlePayAvailable && (
-                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-yellow-800 text-sm">
-                      <p>
-                        Google Pay n'est pas disponible sur votre appareil.
-                        Veuillez utiliser un autre mode de paiement.
-                      </p>
+                {paymentStatus === "processing" && (
+                  <div className="py-12 text-center">
+                    <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-purple-500 border-t-transparent mb-4"></div>
+                    <p className="text-gray-600 font-medium">Traitement de votre paiement...</p>
+                    <p className="text-sm text-gray-500 mt-2">Veuillez patienter un instant</p>
+                  </div>
+                )}
+
+                {paymentStatus === "success" && (
+                  <div className="py-12 text-center">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-500 mb-6">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
-                  )}
-
-                  <button
-                    onClick={handleGooglePay}
-                    disabled={!googlePayAvailable}
-                    className={`w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 rounded-xl font-medium flex items-center justify-center space-x-2 hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 ${
-                      !googlePayAvailable ? "opacity-50 cursor-not-allowed" : ""
-                    }`}
-                  >
-                    <FaGooglePay className="text-2xl" />
-                    <span>Payer avec Google Pay</span>
-                  </button>
-                </div>
-              )}
-
-              {paymentStatus === "processing" && (
-                <div className="text-center py-8">
-                  <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-purple-500 border-t-transparent mb-4"></div>
-                  <p className="text-gray-600">
-                    Traitement de votre paiement...
-                  </p>
-                </div>
-              )}
-
-              {paymentStatus === "success" && (
-                <div className="text-center py-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-500 mb-4">
-                    <svg
-                      className="w-8 h-8"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      ></path>
-                    </svg>
+                    <h4 className="text-2xl font-bold text-gray-800 mb-2">Paiement réussi!</h4>
+                    <p className="text-gray-600">Votre abonnement a été activé avec succès.</p>
+                    <p className="text-gray-600 mt-2">Un email de confirmation a été envoyé à {formData.email}.</p>
+                    {subscriptionId && (
+                      <p className="text-sm text-gray-500 mt-4 bg-gray-50 py-2 px-4 rounded-lg inline-block">
+                        ID d'abonnement: {subscriptionId}
+                      </p>
+                    )}
                   </div>
-                  <h4 className="text-xl font-bold text-gray-800 mb-2">
-                    Paiement réussi!
-                  </h4>
-                  <p className="text-gray-600">
-                    Votre abonnement a été activé avec succès.
-                  </p>
-                  <p className="text-gray-600 mt-2">
-                    Un email de confirmation a été envoyé à {formData.email}.
-                  </p>
-                  {subscriptionId && (
-                    <p className="text-gray-500 text-sm mt-2">
-                      ID d'abonnement: {subscriptionId}
+                )}
+
+                {paymentStatus === "error" && (
+                  <div className="py-12 text-center">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 text-red-500 mb-6">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </div>
+                    <h4 className="text-2xl font-bold text-gray-800 mb-2">Erreur de paiement</h4>
+                    <p className="text-gray-600 mb-6">
+                      {errorMessage || "Une erreur s'est produite lors du traitement de votre paiement."}
                     </p>
-                  )}
-                </div>
-              )}
-
-              {paymentStatus === "error" && (
-                <div className="text-center py-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 text-red-500 mb-4">
-                    <svg
-                      className="w-8 h-8"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <button
+                      onClick={() => setPaymentStatus("idle")}
+                      className="px-6 py-2 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-colors font-medium"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M6 18L18 6M6 6l12 12"
-                      ></path>
-                    </svg>
+                      Réessayer
+                    </button>
                   </div>
-                  <h4 className="text-xl font-bold text-gray-800 mb-2">
-                    Erreur de paiement
-                  </h4>
-                  <p className="text-gray-600">
-                    {errorMessage ||
-                      "Une erreur s'est produite lors du traitement de votre paiement."}
-                  </p>
-                  <button
-                    onClick={() => setPaymentStatus("idle")}
-                    className="mt-4 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-                  >
-                    Réessayer
-                  </button>
-                </div>
-              )}
-
-              {paymentStatus === "idle" && (
-                <button
-                  onClick={() => setShowPaymentModal(false)}
-                  className="mt-4 w-full py-3 border border-gray-300 rounded-xl text-gray-600 hover:bg-gray-50 transition-colors"
-                >
-                  Annuler
-                </button>
-              )}
+                )}
+              </div>
             </motion.div>
           </motion.div>
         )}

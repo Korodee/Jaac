@@ -9,7 +9,7 @@ import 'react-phone-number-input/style.css';
 import '@/styles/phone-input.css';
 
 type FormData = {
-  name: string;
+  fullName: string;
   email: string;
   phone: Value | undefined;
   subject: string;
@@ -18,13 +18,13 @@ type FormData = {
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
     phone: "" as Value,
     message: "",
   });
   const [formErrors, setFormErrors] = useState({
-    name: "",
+    fullName: "",
     email: "",
     phone: "",
     message: "",
@@ -34,15 +34,15 @@ export default function Contact() {
 
   const validateForm = () => {
     const errors = {
-      name: "",
+      fullName: "",
       email: "",
       phone: "",
       message: "",
     };
     let isValid = true;
 
-    if (!formData.name.trim()) {
-      errors.name = "Le nom est requis";
+    if (!formData.fullName.trim()) {
+      errors.fullName = "Le nom est requis";
       isValid = false;
     }
 
@@ -95,7 +95,7 @@ export default function Contact() {
 
       setSubmitStatus("success");
       setFormData({
-        name: "",
+        fullName: "",
         email: "",
         phone: "" as Value,
         message: "",
@@ -275,22 +275,22 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                        <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
                           Nom complet *
                         </label>
                         <input
                           type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
+                          id="fullName"
+                          name="fullName"
+                          value={formData.fullName}
                           onChange={handleChange}
                           className={`w-full px-4 py-2 rounded-lg border ${
-                            formErrors.name ? "border-red-500" : "border-gray-300"
+                            formErrors.fullName ? "border-red-500" : "border-gray-300"
                           } focus:ring-2 focus:ring-purple-500 focus:border-transparent`}
                           placeholder="Votre nom"
                         />
-                        {formErrors.name && (
-                          <p className="mt-1 text-sm text-red-500">{formErrors.name}</p>
+                        {formErrors.fullName && (
+                          <p className="mt-1 text-sm text-red-500">{formErrors.fullName}</p>
                         )}
                       </div>
                       <div>

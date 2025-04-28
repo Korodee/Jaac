@@ -15,6 +15,7 @@
     "@react-three/drei": "^9.56.14",
     "@react-three/fiber": "^8.13.7",
     "@react-three/postprocessing": "^2.5.5",
+    "@sendgrid/mail": "^8.1.5",
     "@types/nodemailer": "^6.4.17",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -29,6 +30,8 @@
     "react-intersection-observer": "^9.16.0",
     "react-phone-number-input": "^3.4.12",
     "react-spring": "^9.7.5",
+    "resend": "^4.4.1",
+    "square": "^42.1.0",
     "tailwind-merge": "^3.2.0",
     "three": "^0.175.0"
   },
