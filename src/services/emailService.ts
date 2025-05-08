@@ -1,17 +1,21 @@
 import axios from "axios";
 
-if (!process.env.BREVO_API_KEY) {
-    throw new Error("BREVO_API_KEY is not defined in environment variables");
+if (!process.env.NEXT_PUBLIC_BREVO_API_KEY) {
+    throw new Error(
+        "NEXT_PUBLIC_BREVO_API_KEY is not defined in environment variables"
+    );
 }
 
-if (!process.env.ADMIN_EMAIL) {
-    throw new Error("ADMIN_EMAIL is not defined in environment variables");
+if (!process.env.NEXT_PUBLIC_ADMIN_EMAIL) {
+    throw new Error(
+        "NEXT_PUBLIC_ADMIN_EMAIL is not defined in environment variables"
+    );
 }
 
 const BREVO_API_URL = "https://api.brevo.com/v3/smtp/email";
 const headers = {
     accept: "application/json",
-    "api-key": process.env.BREVO_API_KEY,
+    "api-key": process.env.NEXT_PUBLIC_BREVO_API_KEY,
     "content-type": "application/json",
 };
 
@@ -63,7 +67,12 @@ export const sendAdminNotificationEmail = async (data: EmailData) => {
         }
 
         const payload = {
-            to: [{ email: process.env.ADMIN_EMAIL, name: "JAAC Admin" }],
+            to: [
+                {
+                    email: process.env.NEXT_PUBLIC_ADMIN_EMAIL,
+                    name: "JAAC Admin",
+                },
+            ],
             sender: { email: "jaac.team@gmail.com", name: "JAAC" },
             templateId: 2,
             params: {
@@ -85,6 +94,48 @@ export const sendAdminNotificationEmail = async (data: EmailData) => {
                 error instanceof Error
                     ? error.message
                     : "Failed to send admin notification email",
+        };
+    }
+};
+
+export const sendContactUsEmail = async (data: {
+    fullName: string;
+    email: string;
+    phone: string;
+    message: string;
+}) => {
+    try {
+        if (!data.email) {
+            throw new Error("Missing required email data");
+        }
+
+        const payload = {
+            to: [
+                {
+                    email: process.env.NEXT_PUBLIC_ADMIN_EMAIL,
+                    name: "JAAC Admin",
+                },
+            ],
+            sender: { email: "jaac.team@gmail.com", name: "JAAC" },
+            templateId: 3,
+            params: {
+                fullName: data.fullName,
+                email: data.email,
+                phone: data.phone,
+                message: data.message,
+            },
+        };
+
+        const response = await axios.post(BREVO_API_URL, payload, { headers });
+        return { success: true, data: response.data };
+    } catch (error) {
+        console.error("Error sending contact us email:", error);
+        return {
+            success: false,
+            error:
+                error instanceof Error
+                    ? error.message
+                    : "Failed to send contact us email",
         };
     }
 };
