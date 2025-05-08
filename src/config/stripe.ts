@@ -1,7 +1,7 @@
 // Stripe Configuration
 export const stripeConfig = {
-    // Test publishable key
-    publishableKey: "pk_test_qblFNYngBkEdjEZ16jxxoWSM",
+    // Publishable key from environment
+    publishableKey: process.env.STRIPE_PUBLISHABLE_KEY || "",
 
     // Product IDs for different plans
     products: {

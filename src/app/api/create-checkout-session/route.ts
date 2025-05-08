@@ -2,14 +2,8 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { stripeConfig } from "../../../config/stripe";
 
-if (!process.env.STRIPE_SECRET_KEY) {
-    throw new Error(
-        "STRIPE_SECRET_KEY is not defined in environment variables"
-    );
-}
-
-// Initialize Stripe with your test secret key
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+// Initialize Stripe with secret key from environment
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
     apiVersion: "2025-04-30.basil",
 });
 
