@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import { stripeConfig } from "../../../config/stripe";
 
 // Initialize Stripe with secret key from environment
-const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY || "", {
+const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET || "", {
     apiVersion: "2025-04-30.basil",
 });
 

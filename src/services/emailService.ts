@@ -1,8 +1,8 @@
 import axios from "axios";
 
-if (!process.env.NEXT_PUBLIC_BREVO_API_KEY) {
+if (!process.env.NEXT_PUBLIC_BREVO_API) {
     throw new Error(
-        "NEXT_PUBLIC_BREVO_API_KEY is not defined in environment variables"
+        "NEXT_PUBLIC_BREVO_API is not defined in environment variables"
     );
 }
 
@@ -15,7 +15,7 @@ if (!process.env.NEXT_PUBLIC_ADMIN_EMAIL) {
 const BREVO_API_URL = "https://api.brevo.com/v3/smtp/email";
 const headers = {
     accept: "application/json",
-    "api-key": process.env.NEXT_PUBLIC_BREVO_API_KEY,
+    "api-key": process.env.NEXT_PUBLIC_BREVO_API,
     "content-type": "application/json",
 };
 
