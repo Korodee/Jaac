@@ -20,12 +20,6 @@ function SuccessPageContent() {
     const [hasSent, setHasSent] = useState(false);
 
     useEffect(() => {
-        if (
-            hasSent ||
-            typeof window === "undefined" ||
-            sessionStorage.getItem("confirmationSent")
-        )
-            return;
         const sendConfirmationEmails = async () => {
             try {
                 const sessionId = searchParams.get("session_id");
@@ -118,8 +112,17 @@ function SuccessPageContent() {
                 setIsLoading(false);
             }
         };
-
-        sendConfirmationEmails();
+        if (
+            hasSent ||
+            typeof window === "undefined" ||
+            sessionStorage.getItem("confirmationSent")
+        ) {
+            console.error("Error in success page");
+            setError("Votre paiement a été traité");
+            setIsLoading(false);
+        } else {
+            sendConfirmationEmails();
+        }
     }, [searchParams, hasSent]);
 
     if (isLoading) {
