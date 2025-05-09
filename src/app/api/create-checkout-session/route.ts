@@ -107,8 +107,8 @@ export async function POST(request: Request) {
                 },
             ],
             mode,
-            success_url: `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/success?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/subscribe`,
+            success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/subscribe`,
             customer_email: customerEmail,
             billing_address_collection: "required",
             metadata: {
