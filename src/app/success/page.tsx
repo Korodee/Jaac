@@ -116,13 +116,9 @@ function SuccessPageContent() {
             hasSent ||
             typeof window === "undefined" ||
             sessionStorage.getItem("confirmationSent")
-        ) {
-            console.error("Error in success page");
-            setError("Votre paiement a été traité");
-            setIsLoading(false);
-        } else {
-            sendConfirmationEmails();
-        }
+        )
+            return;
+        sendConfirmationEmails();
     }, [searchParams, hasSent]);
 
     if (isLoading) {
