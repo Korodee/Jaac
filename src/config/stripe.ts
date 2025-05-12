@@ -14,7 +14,7 @@ export const stripeConfig = {
         },
         coupdemain: {
             priceId: "price_COUPDEMAIN_TEST_ID", // Replace with your actual test price ID
-            name: "Coup de Main",
+            name: "Coup de Pouce",
             price: 29,
             currency: "CAD",
             interval: "session",

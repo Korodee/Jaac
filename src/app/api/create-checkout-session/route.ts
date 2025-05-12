@@ -30,11 +30,11 @@ async function ensureTestProductIndividual() {
     }
 }
 
-// Create test product and price for Coup de Main if they don't exist
+// Create test product and price for Coup de POUCE if they don't exist
 async function ensureTestProductCoupDeMain() {
     try {
         const product = await stripe.products.create({
-            name: "Coup de Main",
+            name: "Coup de Pouce",
             description: "Intervention rapide de 30 minutes",
         });
         const price = await stripe.prices.create({
