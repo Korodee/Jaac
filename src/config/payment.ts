@@ -31,7 +31,7 @@ export const subscriptionPlans = {
     },
     coupdemain: {
         id: "coupdemain",
-        name: "Coup de Main",
+        name: "Coup de Pouce",
         price: "29",
         currency: "CAD",
         interval: "session",

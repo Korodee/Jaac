@@ -12,6 +12,7 @@ const navItems = [
   { name: "À propos", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Contact", href: "/contact" },
+  { name: "Single?", href: "/single" },
   { name: "S'abonner", href: "#pricing", isSpecial: true, isScroll: true },
 ];
 
@@ -60,12 +61,12 @@ export default function Header() {
           : "bg-transparent py-2"
       }`}
     >
-      <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center">
+      <div className='container mx-auto px-6'>
+        <div className='flex justify-between items-center'>
           <Logo isScrolled={pathname === "/about" ? true : isScrolled} />
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className='hidden md:flex items-center space-x-1'>
             {navItems.map((item, index) => {
               const isActive = pathname === item.href;
               return (
@@ -76,12 +77,12 @@ export default function Header() {
                     item.isSpecial
                       ? "ml-2 bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white font-medium shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40"
                       : isScrolled
-                      ? isActive
-                        ? "text-purple-600 font-medium"
-                        : "text-gray-600 hover:text-purple-600"
-                      : isActive
-                      ? "text-white font-medium"
-                      : "text-white/90 hover:text-white"
+                        ? isActive
+                          ? "text-purple-600 font-medium"
+                          : "text-gray-600 hover:text-purple-600"
+                        : isActive
+                          ? "text-white font-medium"
+                          : "text-white/90 hover:text-white"
                   }`}
                   onHoverStart={() => setHoveredItem(item.name)}
                   onHoverEnd={() => setHoveredItem(null)}
@@ -93,13 +94,13 @@ export default function Header() {
                       : undefined
                   }
                 >
-                  <span className="relative z-10 text-sm font-medium tracking-wide">
+                  <span className='relative z-10 text-sm font-medium tracking-wide'>
                     {item.name}
                   </span>
                   {!item.isSpecial &&
                     (isActive || hoveredItem === item.name) && (
                       <motion.div
-                        layoutId="navBackground"
+                        layoutId='navBackground'
                         className={`absolute inset-0 rounded-xl -z-10 ${
                           isScrolled
                             ? "bg-purple-50"
@@ -145,7 +146,7 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] md:hidden"
+              className='fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999] md:hidden'
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <motion.nav
@@ -153,22 +154,22 @@ export default function Header() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="fixed top-0 left-0 right-0 bg-gradient-to-b from-purple-900 to-indigo-900 px-4 pt-4 pb-6 shadow-2xl"
+                className='fixed top-0 left-0 right-0 bg-gradient-to-b from-purple-900 to-indigo-900 px-4 pt-4 pb-6 shadow-2xl'
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="container mx-auto px-2">
-                  <div className="flex justify-between items-center mb-2">
+                <div className='container mx-auto px-2'>
+                  <div className='flex justify-between items-center mb-2'>
                     <Logo isScrolled={false} />
                     <button
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-                      aria-label="Close menu"
+                      className='p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors'
+                      aria-label='Close menu'
                     >
                       <HiX size={24} />
                     </button>
                   </div>
 
-                  <div className="flex flex-col space-y-4">
+                  <div className='flex flex-col space-y-4'>
                     {navItems.map((item, index) => {
                       const isActive = pathname === item.href;
                       return (
@@ -179,8 +180,8 @@ export default function Header() {
                             item.isSpecial
                               ? "bg-gradient-to-r from-purple-600 via-purple-500 to-indigo-600 text-white font-medium shadow-lg"
                               : isActive
-                              ? "bg-white/20 text-white font-medium"
-                              : "text-white/90 hover:bg-white/10"
+                                ? "bg-white/20 text-white font-medium"
+                                : "text-white/90 hover:bg-white/10"
                           }`}
                           onClick={(e) => {
                             if (item.isScroll) {
@@ -195,7 +196,7 @@ export default function Header() {
                             initial={{ x: -10, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             transition={{ delay: index * 0.1 }}
-                            className="block text-base font-medium"
+                            className='block text-base font-medium'
                           >
                             {item.name}
                           </motion.span>

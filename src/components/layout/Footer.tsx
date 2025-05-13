@@ -225,6 +225,15 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/join-us"
+                  className="text-gray-400 hover:text-white transition-colors flex items-center group"
+                >
+                  <span className="w-1.5 h-1.5 bg-cyan-500 rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
+                  Join Us
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/subscribe"
                   className="text-gray-400 hover:text-white transition-colors flex items-center group"
                 >

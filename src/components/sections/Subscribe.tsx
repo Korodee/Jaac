@@ -41,7 +41,7 @@ const plans = [
   },
   {
     id: "coupdemain",
-    title: "Coup de Main",
+    title: "Coup de Pouce",
     icon: <FaHandHoldingHeart className="text-4xl" />,
     price: "29",
     period: "par séance",
@@ -230,7 +230,7 @@ export default function Subscribe() {
             Abonnements Mensuels
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Améliorez votre abonnement en ajoutant COUP DE MAIN à
+                        Améliorez votre abonnement en ajoutant COUP DE POUCE à
                         vos services à la carte. Une intervention de 30 minutes
                         pour vous aider à y voir plus clair dans votre situation
                         avec notre méthode brève, rapide et efficace.
